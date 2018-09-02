@@ -8,14 +8,14 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t condenser .
+          command: docker build -t dsite-frontend .
       - run:
           name: Save Docker image
-          command: docker save -o condenser.tar condenser
+          command: docker save -o dsite-frontend.tar dsite-frontend
       - persist_to_workspace:
           root: .
           paths:
-            - condenser.tar
+            - dsite-frontend.tar
   build-blackboxtest:
     docker:
       - image: docker:17-git
@@ -24,14 +24,14 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t condenser-blackboxtest blackboxtest/
+          command: docker build -t dsite-frontend-blackboxtest blackboxtest/
       - run:
           name: Save Docker image
-          command: docker save -o condenser-blackboxtest.tar condenser-blackboxtest
+          command: docker save -o dsite-frontend-blackboxtest.tar dsite-frontend-blackboxtest
       - persist_to_workspace:
           root: .
           paths:
-            - condenser-blackboxtest.tar
+            - dsite-frontend-blackboxtest.tar
   run-blackboxtest:
     docker:
       - image: docker:17-git
@@ -43,19 +43,19 @@ jobs:
       - run:
           name: Load Docker images
           command: |
-            docker load -i /tmp/workspace/condenser.tar
-            docker load -i /tmp/workspace/condenser-blackboxtest.tar
+            docker load -i /tmp/workspace/dsite-frontend.tar
+            docker load -i /tmp/workspace/dsite-frontend-blackboxtest.tar
       - run:
-          name: Start condenser
+          name: Start dsite-frontend
           command: |
-            docker run -ditp 8080:8080 --name condenser condenser
-            sleep 10 # let condenser start
+            docker run -ditp 8080:8080 --name dsite-frontend dsite-frontend
+            sleep 10 # let dsite-frontend start
       - run:
           name: Run tests
-          command: docker run --network container:condenser condenser-blackboxtest
+          command: docker run --network container:dsite-frontend dsite-frontend-blackboxtest
 workflows:
   version: 2
-  condenser:
+  dsite-frontend:
     jobs:
       - build
       - build-blackboxtest

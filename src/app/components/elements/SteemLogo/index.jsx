@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SteemLogo = () => {
+const DSiteLogo = () => {
     return (
         <span className="logo">
             <svg width="150" height="40" viewBox="0 0 150 40" version="1.1">
@@ -25,4 +25,4 @@ const SteemLogo = () => {
     );
 };
 
-export default SteemLogo;
+export default DSiteLogo;

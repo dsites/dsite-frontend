@@ -14,7 +14,7 @@ import * as userActions from 'app/redux/UserReducer';
 import * as appActions from 'app/redux/AppReducer';
 import Userpic from 'app/components/elements/Userpic';
 import { SIGNUP_URL } from 'shared/constants';
-import SteemLogo from 'app/components/elements/SteemLogo';
+import DSiteLogo from 'app/components/elements/DSiteLogo';
 import normalizeProfile from 'app/utils/NormalizeProfile';
 
 class Header extends React.Component {
@@ -263,7 +263,7 @@ class Header extends React.Component {
                     <div className="small-5 large-4 columns Header__logotype">
                         {/*LOGO*/}
                         <Link to={logo_link}>
-                            <SteemLogo />
+                            <DSiteLogo />
                         </Link>
                     </div>
 

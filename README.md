@@ -1,26 +1,26 @@
 
-# Condenser
+# dSite-Frontend
 
 
-Condenser is the react.js web interface to the world's first and best
-blockchain-based social media platform, steemit.com.  It uses
-[STEEM](https://github.com/steemit/steem), a blockchain powered by Graphene
+`dSite-Frontend` is the react.js web interface to the world's first and best
+blockchain-based social media platform, dSite.io.  It uses
+[dPay](https://github.com/dpays/dpays), a blockchain powered by Graphene
 2.0 technology to store JSON-based content for a plethora of web
 applications.   
 
-## Why would I want to use Condenser (steemit.com front-end)?
+## Why would I want to use Condenser (dSite.io front-end)?
 
-* Learning how to build blockchain-based web applications using STEEM as a
+* Learning how to build blockchain-based web applications using dPay as a
   content storage mechanism in react.js
-* Reviewing the inner workings of the steemit.com social media platform
-* Assisting with software development for steemit.com
+* Reviewing the inner workings of the dSite.io social media platform
+* Assisting with software development for dSite.io
 
 ## Installation
 
 #### Docker
 
 We highly recommend using docker to run condenser. This is how we run the
-live steemit.com site and it is the most supported (and fastest) method of
+live dSite.io site and it is the most supported (and fastest) method of
 both building and running condenser. We will always have the latest version
 of condenser (master branch) available on Docker Hub. Configuration settings
 can be set using environment variables (see configuration section below for
@@ -30,13 +30,13 @@ https://get.docker.com
 To bring up a running container it's as simple as this:
 
 ```bash
-docker run -it -p 8080:8080 steemit/condenser
+docker run -it -p 8080:8080 dsites/dsite-frontend
 ```
 
 Environment variables can be added like this:
 
 ```bash
-docker run -it --env SDC_DATABASE_URL="mysql://user:pass@hostname/databasename" -p 8080:8080 steemit/condenser
+docker run -it --env SDC_DATABASE_URL="mysql://user:pass@hostname/databasename" -p 8080:8080 dsites/dsite-frontend
 ```
 
 If you would like to modify, build, and run condenser using docker, it's as
@@ -44,10 +44,10 @@ simple as pulling in the github repo and issuing one command to build it,
 like this:
 
 ```bash
-git clone https://github.com/steemit/condenser
-cd condenser
-docker build -t="myname/condenser:mybranch" .
-docker run -it -p 8080:8080 myname/condenser:mybranch
+git clone https://github.com/dsites/dsite-frontend
+cd dsite-frontend
+docker build -t="myname/dsite-frontend:mybranch" .
+docker run -it -p 8080:8080 myname/dsites:dsite-frontend
 ```
 
 ## Building from source without docker (the 'traditional' way):
@@ -55,8 +55,8 @@ docker run -it -p 8080:8080 myname/condenser:mybranch
 #### Clone the repository and make a tmp folder
 
 ```bash
-git clone https://github.com/steemit/condenser
-cd condenser
+git clone https://github.com/dsites/dsite-frontend
+cd dsite-frontend
 mkdir tmp
 ```
 
@@ -77,7 +77,7 @@ nvm install v8.7
 ```
 
 We use the yarn package manager instead of the default `npm`. There are
-multiple reasons for this, one being that we have `steem-js` built from
+multiple reasons for this, one being that we have `dpayjs` built from
 source pulling the github repo as part of the build process and yarn
 supports this. This way the library that handles keys can be loaded by
 commit hash instead of a version name and cryptographically verified to be
@@ -109,13 +109,13 @@ yarn run start
 It will take quite a bit longer to start in this mode (~60s) as it needs to
 build and start the webpack-dev-server.
 
-By default you will be connected to steemit.com's public steem node at
-`wss://steemd.steeemit.com`. This is actually on the real blockchain and
+By default you will be connected to dSite.io's public dPay node at
+`wss://node.dsite.io`. This is actually on the real blockchain and
 you would use your regular account name and credentials to login - there is
 not an official separate testnet at this time. If you intend to run a
 full-fledged site relying on your own, we recommend looking into running a
-copy of `steemd` locally instead
-[https://github.com/steemit/steem](https://github.com/steemit/steem).
+copy of `dpayd` locally instead
+[https://github.com/dpays/dpays](https://github.com/dpays/dpays).
 
 #### Debugging SSR code
 
@@ -134,8 +134,8 @@ stored in `config/defaults.json`.
 Environment variables using an example like this:
 
 ```bash
-export SDC_CLIENT_STEEMD_URL="wss://steemd.steemit.com"
-export SDC_SERVER_STEEMD_URL="wss://steemd.steemit.com"
+export SDC_CLIENT_DPAYD_URL="wss://node.dsite.io"
+export SDC_SERVER_DPAYD_URL="wss://node.dsite.io"
 ```
 
 Keep in mind environment variables only exist in your active session, so if
@@ -176,7 +176,7 @@ format `mysql://user:pass@hostname/databasename`.
 Example:
 
 ```bash
-export SDC_DATABASE_URL="mysql://root:password@127.0.0.1/steemit_dev"
+export SDC_DATABASE_URL="mysql://root:password@127.0.0.1/dsite_dev"
 ```
 
 Here are instructions for setting up a mysql server and running the
@@ -210,10 +210,10 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 FLUSH PRIVILEGES;
 ```
 
-Now launch mysql client and create steemit_dev database:
+Now launch mysql client and create dsite_dev database:
 ```bash
 mysql -u root
-> create database steemit_dev;
+> create database dsite_dev;
 > quit
 ```
 
@@ -285,18 +285,18 @@ If you want to test a server-side rendered page without using the network, do th
 
 ```
 yarn build
-OFFLINE_SSR_TEST=true SDC_DATABASE_URL="mysql://root@127.0.0.1/steemit_dev" NODE_ENV=production node --prof lib/server/index.js
+OFFLINE_SSR_TEST=true SDC_DATABASE_URL="mysql://root@127.0.0.1/dsite_dev" NODE_ENV=production node --prof lib/server/index.js
 ```
 
 This will read data from the blobs in `api_mockdata` directory. If you want to use another set of mock data, create a similar directory to that one and add an argument `OFFLINE_SSR_TEST_DATA_DIR` pointing to your new directory.
 
 ### Run blackbox tests using nightwatch
 
-To run a Selenium test suite, start the condenser docker image with a name `condenser` (like `docker run --name condenser -itp 8080:8080 steemit/condenser:latest`) and then run the blackboxtest image attached to the condneser image's network:
+To run a Selenium test suite, start the condenser docker image with a name `dsite-frontend` (like `docker run --name condenser -itp 8080:8080 dsites/dsite-frontend:latest`) and then run the blackboxtest image attached to the dsite-frontend image's network:
 
 ```
-docker build -t=steemit/condenser-blackboxtest blackboxtest/
-docker run --network container:condenser steemit/condenser-blackboxtest:latest
+docker build -t=dsites/dsite-frontend-blackboxtest blackboxtest/
+docker run --network container:dsite-frontend dsites/dsite-frontend-blackboxtest:latest
 
 ```
 
@@ -304,6 +304,6 @@ docker run --network container:condenser steemit/condenser-blackboxtest:latest
 
 To report a non-critical issue, please file an issue on this GitHub project.
 
-If you find a security issue please report details to: security@steemit.com
+If you find a security issue please report details to: security@dSite.io
 
 We will evaluate the risk and make a patch available before filing the issue.
