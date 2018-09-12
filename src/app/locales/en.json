@@ -11,7 +11,7 @@
         "blog": "Blog",
         "browse": "Browse",
         "buy": "Buy",
-        "buy_steem_power": "Buy Steem Power",
+        "buy_dpay_power": "Buy BEX Power",
         "buy_or_sell": "Buy or Sell",
         "by": "by",
         "cancel": "Cancel",
@@ -29,7 +29,7 @@
         "edit": "Edit",
         "email": "Email",
         "external_link_message":
-            "This link will take you away from steemit.com",
+            "This link will take you away from dSite.io",
         "feed": "Feed",
         "follow": "Follow",
         "for": " for ",
@@ -189,9 +189,9 @@
         "vote_currently_exists_user_must_be_indicate_a_to_reject_witness":
             "vote currently exists, user must be indicate a desire to reject witness",
         "only_one_APP_NAME_account_allowed_per_ip_address_every_10_minutes":
-            "Only one Steem account allowed per IP address every 10 minutes",
-        "resteem_this_post": "Resteem This Post",
-        "reblog": "Resteem",
+            "Only one dPay account allowed per IP address every 10 minutes",
+        "redpay_this_post": "Repost This Post",
+        "reblog": "Repost",
         "write_your_story": "Write your story...",
         "remember_voting_and_posting_key": "Remember voting & posting key",
         "auto_login_question_mark": "Auto login?",
@@ -215,9 +215,9 @@
             "authors_get_paid_when_people_like_you_upvote_their_post":
                 "Authors get paid when people like you upvote their post",
             "if_you_enjoyed_what_you_read_earn_amount":
-                "If you enjoyed what you read here, create your account today and start earning FREE STEEM!",
-            "free_steem": "FREE STEEM!",
-            "sign_up_earn_steem": "Sign up now to earn "
+                "If you enjoyed what you read here, create your account today and start earning FREE BEX!",
+            "free_dpay": "FREE BEX!",
+            "sign_up_earn_dpay": "Sign up now to earn "
         },
         "next_3_strings_together": {
             "show_more": "Show more",
@@ -242,9 +242,9 @@
         },
         "post_key_warning": {
             "confirm":
-                "You are about to publish a STEEM private key or master password. You will probably lose control of the associated account and all its funds.",
+                "You are about to publish a dPay private key or master password. You will probably lose control of the associated account and all its funds.",
             "warning":
-                "Legitimate users, including employees of Steemit Inc., will never ask you for a private key or master password.",
+                "Legitimate users, including employees of dPay, DAO., will never ask you for a private key or master password.",
             "checkbox": "I understand"
         }
     },
@@ -266,17 +266,17 @@
         "learn_more": "Learn more",
         "welcome": "Welcome",
         "faq": "FAQ",
-        "shop": "The Steemit Shop",
-        "chat": "Steem Chat",
-        "app_center": "Apps Built on Steem",
-        "api_docs": "Steemit API Docs",
-        "bluepaper": "Steem Bluepaper",
+        "shop": "The dSite Shop",
+        "chat": "dSite Chat",
+        "app_center": "Apps Built on dPay",
+        "api_docs": "dSite API Docs",
+        "bluepaper": "dPay Bluepaper",
         "smt_whitepaper": "SMT Whitepaper",
-        "whitepaper": "Steem Whitepaper",
+        "whitepaper": "dPay Whitepaper",
         "intro_tagline": "Your voice is worth something",
         "intro_paragraph":
-            "Get paid for good content. Post and upvote articles on Steemit to get your share of the daily rewards pool.",
-        "jobs": "Jobs at Steemit"
+            "Get paid for good content. Post and upvote articles on dSite to get your share of the daily rewards pool.",
+        "jobs": "Jobs at dSite"
     },
     "main_menu": {
         "hot": "Hot",
@@ -300,7 +300,7 @@
         "selecting_them": "selecting them",
         "image_upload": "Image upload",
         "power_up_100": "Power Up 100%%",
-        "default_50_50": "50%% SBD / 50%% SP",
+        "default_50_50": "50%% BBD / 50%% BP",
         "decline_payout": "Decline Payout",
         "check_this_to_auto_upvote_your_post":
             "Check this to auto-upvote your post",
@@ -390,7 +390,7 @@
         "request_already_submitted_contact_support":
             "Your request has been already submitted and we are working on it. Please contact %(SUPPORT_EMAIL)s for the status of your request.",
         "recover_account_intro":
-            "From time to time, a Steemian's owner key may be compromised. Stolen Account Recovery gives the rightful account owner 30 days to recover their account from the moment the thief changed their owner key. Stolen Account Recovery can only be used on %(APP_URL)s if the account owner had previously listed '%(APP_NAME)s' as their account trustee and complied with %(APP_NAME)s's Terms of Service.",
+            "From time to time, a dWeeb's owner key may be compromised. Stolen Account Recovery gives the rightful account owner 30 days to recover their account from the moment the thief changed their owner key. Stolen Account Recovery can only be used on %(APP_URL)s if the account owner had previously listed '%(APP_NAME)s' as their account trustee and complied with %(APP_NAME)s's Terms of Service.",
         "login_with_facebook_or_reddit_media_to_verify_identity":
             "Please login with Facebook or Reddit to verify your identity",
         "login_with_social_media_to_verify_identity":
@@ -561,7 +561,7 @@
         "after_printing_write_down_your_user_name":
             "After printing, write down your user name"
     },
-    "converttosteem_jsx": {
+    "converttodpay_jsx": {
         "your_existing_DEBT_TOKEN_are_liquid_and_transferable":
             "Your existing %(DEBT_TOKEN)s are liquid and transferable. Instead you may wish to trade %(DEBT_TOKEN)s directly in this site under %(link)s or transfer to an external market.",
         "this_is_a_price_feed_conversion":
@@ -581,8 +581,8 @@
             "%(VESTING_TOKEN)s is non-transferable and requires 3 months (13 payments) to convert back to %(LIQUID_TOKEN)s.",
         "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again":
             "Converted %(VESTING_TOKEN)s can be sent to yourself or someone else but can not transfer again without converting back to %(LIQUID_TOKEN)s.",
-        "part_of_your_steem_power_is_currently_delegated":
-            "Part of %(user_name)s's STEEM POWER is currently delegated. Delegation is donated for influence or to help new users perform actions on steemit. Your delegation amount can fluctuate."
+        "part_of_your_dpay_power_is_currently_delegated":
+            "Part of %(user_name)s's BEX POWER is currently delegated. Delegation is donated for influence or to help new users perform actions on dSite. Your delegation amount can fluctuate."
     },
     "promote_post_jsx": {
         "promote_post": "Promote Post",
@@ -596,7 +596,7 @@
     "about_jsx": {
         "about_app": "About %(APP_NAME)s",
         "about_app_details":
-            "%(APP_NAME)s is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called Steem, that supports real value for digital rewards through market price discovery and liquidity.",
+            "%(APP_NAME)s is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called dPay, that supports real value for digital rewards through market price discovery and liquidity.",
         "learn_more_at_app_url": "Learn more at %(APP_URL)s",
         "resources": "Resources"
     },
@@ -605,8 +605,8 @@
             "Images were hidden due to low ratings."
     },
     "postsummary_jsx": {
-        "resteemed": "resteemed",
-        "resteemed_by": "Resteemed by",
+        "reposted": "reposted",
+        "reposted_by": "Reposted by",
         "reveal_it": "Reveal this post",
         "adjust_your": "adjust your",
         "display_preferences": "display preferences",
@@ -629,7 +629,7 @@
         "cancel_transfer_from_savings":
             "Cancel transfer from savings (request %(request_id)s)",
         "stop_power_down": "Stop power down",
-        "withdraw_vesting": "Start power down of %(powerdown_vests)s STEEM",
+        "withdraw_vesting": "Start power down of %(powerdown_vests)s BEX",
         "start_power_down_of": "Start power down of",
         "receive_interest_of": "Receive interest of",
         "bad_actor_caution": "Caution",
@@ -641,9 +641,9 @@
             "This is from an account with a bad reputation. If you wish, you may temporarily reveal this memo which may contain dangerous links.",
         "from_negative_rep_user_reveal_memo":
             "I understand the risk; show anyway.",
-        "curation_reward": "%(curation_reward)s STEEM POWER for ",
+        "curation_reward": "%(curation_reward)s BEX POWER for ",
         "author_reward":
-            "%(sbd_payout)s%(steem_payout)s and %(author_reward)s STEEM POWER for ",
+            "%(bbd_payout)s%(dpay_payout)s and %(author_reward)s BEX POWER for ",
         "claim_reward_balance": {
             "three_rewards":
                 "Claim rewards: %(first_reward)s, %(second_reward)s and %(third_reward)s",
@@ -661,15 +661,15 @@
                 "Paid %(current_pays)s for %(open_pays)s"
         },
         "comment_benefactor_reward":
-            "%(benefactor_reward)s STEEM POWER for %(author)s/%(permlink)s",
+            "%(benefactor_reward)s BEX POWER for %(author)s/%(permlink)s",
         "transfer_to_vesting": {
             "from_self": {
-                "no_to": "Transfer %(amount)s to STEEM POWER",
-                "to_someone": "Transfer %(amount)s STEEM POWER to "
+                "no_to": "Transfer %(amount)s to BEX POWER",
+                "to_someone": "Transfer %(amount)s BEX POWER to "
             },
-            "to_self": "Receive %(amount)s STEEM POWER from ",
+            "to_self": "Receive %(amount)s BEX POWER from ",
             "from_user_to_user":
-                " Transfer %(amount)s STEEM POWER from %(from) to "
+                " Transfer %(amount)s BEX POWER from %(from) to "
         },
         "transfer": {
             "from_self": {
@@ -750,7 +750,7 @@
         "password_update_succes":
             "The password for %(accountName)s was successfully updated",
         "password_info":
-            "This password or private key was entered incorrectly.  There is probably a handwriting or data-entry error.  Hint: A password or private key generated by Steemit will never contain 0 (zero), O (capital o), I (capital i) and l (lower case L) characters.",
+            "This password or private key was entered incorrectly.  There is probably a handwriting or data-entry error.  Hint: A password or private key generated by dSite will never contain 0 (zero), O (capital o), I (capital i) and l (lower case L) characters.",
         "enter_your_username": "Enter your username",
         "password_or_wif": "Password or WIF",
         "this_operation_requires_your_key_or_master_password":
@@ -759,8 +759,8 @@
         "amazing_community": "amazing community",
         "to_comment_and_reward_others": " to comment and reward others.",
         "signup_button": "Sign up now to earn ",
-        "signup_button_emphasis": "FREE STEEM!",
-        "sign_up_get_steem": "Sign up. Get STEEM!",
+        "signup_button_emphasis": "FREE BEX!",
+        "sign_up_get_dpay": "Sign up. Get BEX!",
         "returning_users": "Returning Users: ",
         "join_our": "Join our",
         "sign_transfer": "Sign to complete transfer"
@@ -826,7 +826,7 @@
         "convert_to_VESTING_TOKEN": "Convert to %(VESTING_TOKEN)s",
         "balance_subject_to_3_day_withdraw_waiting_period":
             "Balances subject to 3 day withdraw waiting period.",
-        "move_funds_to_another_account": "Move funds to another Steem account.",
+        "move_funds_to_another_account": "Move funds to another dPay account.",
         "protect_funds_by_requiring_a_3_day_withdraw_waiting_period":
             "Protect funds by requiring a 3 day withdraw waiting period.",
         "withdraw_funds_after_the_required_3_day_waiting_period":
@@ -855,7 +855,7 @@
         "withdraw_LIQUID_TOKEN": "Withdraw %(LIQUID_TOKEN)s",
         "withdraw_DEBT_TOKENS": "Withdraw %(DEBT_TOKENS)s",
         "tokens_worth_about_1_of_LIQUID_TICKER":
-            "Tokens worth about $1.00 of %(LIQUID_TICKER)s, currently collecting %(sbdInterest)s%% APR.",
+            "Tokens worth about $1.00 of %(LIQUID_TICKER)s, currently collecting %(bbdInterest)s%% APR.",
         "tradeable_tokens_transferred":
             "Tradeable tokens that may be transferred anywhere at anytime.",
         "savings": "SAVINGS",
@@ -865,7 +865,7 @@
         "transfers_are_temporary_disabled": "Transfers are temporary disabled.",
         "history": "HISTORY",
         "redeem_rewards": "Redeem Rewards (Transfer to Balance)",
-        "buy_steem_or_steem_power": "Buy STEEM or STEEM POWER"
+        "buy_dpay_or_dpay_power": "Buy BEX or BEX POWER"
     },
     "powerdown_jsx": {
         "power_down": "Power Down",
@@ -892,8 +892,8 @@
         "please_review": "Please review our terms to continue",
         "hi_user": "Hi %(username)s,",
         "blurb":
-            "Our Terms of Service set the rules and guidelines that you must accept and follow in order to use Steemit and our Privacy Policy explains the type of information we collect and what we do with it. Don't worry, we don't sell your data to anyone. We do use it to meet legal requirements and to learn how to make Steemit better.",
-        "i_agree_to_steemits": "I agree to Steemit's",
+            "Our Terms of Service set the rules and guidelines that you must accept and follow in order to use dSite and our Privacy Policy explains the type of information we collect and what we do with it. Don't worry, we don't sell your data to anyone. We do use it to meet legal requirements and to learn how to make dSite better.",
+        "i_agree_to_dpayits": "I agree to dSite's",
         "terms_of_service": "Terms of Service",
         "privacy_policy": "Privacy Policy",
         "continue": "Continue",
@@ -906,11 +906,11 @@
         "your_transaction_failed": "Your transaction failed to process",
         "out_of_bandwidth_title": "Why? You've run out of bandwidth",
         "out_of_bandwidth_reason":
-            "Actions such as posting and voting use computing resources placing a real cost on the community members who run the Steem blockchain for everyone.",
+            "Actions such as posting and voting use computing resources placing a real cost on the community members who run the dPay blockchain for everyone.",
         "out_of_bandwidth_reason_2":
-            "To keep things free, Steem intelligently allocates bandwidth to each user based on their Steem Power holdings, their recent usage and overall network demand. This system prioritizes actions by good community members while limiting spam.",
-        "out_of_bandwidth_option_title": "To keep interacting on Steemit:",
-        "out_of_bandwidth_option_1": "Buy and hold more Steem Power",
+            "To keep things free, dPay intelligently allocates bandwidth to each user based on their BEX Power holdings, their recent usage and overall network demand. This system prioritizes actions by good community members while limiting spam.",
+        "out_of_bandwidth_option_title": "To keep interacting on dSite:",
+        "out_of_bandwidth_option_1": "Buy and hold more BEX Power",
         "out_of_bandwidth_option_2": "Wait until your bandwidth recharges",
         "out_of_bandwidth_option_3": "Wait until the network usage decreases"
     },

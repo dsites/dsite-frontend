@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SidebarStats = ({ steemPower, followers, reputation }) => (
+const SidebarStats = ({ dpayPower, followers, reputation }) => (
     <div className="c-sidebar__module">
         <div className="c-sidebar__header">
             <h3 className="c-sidebar__h3">Stats</h3>
@@ -8,8 +8,8 @@ const SidebarStats = ({ steemPower, followers, reputation }) => (
         <div className="c-sidebar__content">
             <ul className="c-sidebar__list">
                 <li className="c-sidebar__list-item">
-                    <span className="c-sidebar__label">Steem Power</span>
-                    <span className="c-sidebar__score">{steemPower}</span>
+                    <span className="c-sidebar__label">BEX Power</span>
+                    <span className="c-sidebar__score">{dpayPower}</span>
                 </li>
                 <li className="c-sidebar__list-item">
                     <span className="c-sidebar__label">Followers</span>

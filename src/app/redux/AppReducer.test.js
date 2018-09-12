@@ -2,7 +2,7 @@ import { Map, OrderedMap, getIn } from 'immutable';
 
 import reducer, {
     defaultState,
-    steemApiError,
+    dpayApiError,
     fetchDataBegin,
     fetchDataEnd,
     addNotification,
@@ -61,9 +61,9 @@ describe('App reducer', () => {
             mockActions['LOCATION_CHANGE'].payload.pathname
         );
     });
-    it('should return correct state for a STEEM_API_ERROR action', () => {
+    it('should return correct state for a DPAY_API_ERROR action', () => {
         const initial = reducer();
-        const out = reducer(initial, steemApiError());
+        const out = reducer(initial, dpayApiError());
         expect(out).toEqual(initial);
     });
     it('should return correct state for a FETCH_DATA_BEGIN action', () => {

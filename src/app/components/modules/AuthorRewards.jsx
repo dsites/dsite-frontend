@@ -23,7 +23,7 @@ class AuthorRewards extends React.Component {
         this.onShowDeposit = () => {
             this.setState({ showDeposit: !this.state.showDeposit });
         };
-        this.onShowDepositSteem = () => {
+        this.onShowDepositDPay = () => {
             this.setState({
                 showDeposit: !this.state.showDeposit,
                 depositType: LIQUID_TICKER,
@@ -59,12 +59,12 @@ class AuthorRewards extends React.Component {
         let rewards24Vests = 0,
             rewardsWeekVests = 0,
             totalRewardsVests = 0;
-        let rewards24Steem = 0,
-            rewardsWeekSteem = 0,
-            totalRewardsSteem = 0;
-        let rewards24SBD = 0,
-            rewardsWeekSBD = 0,
-            totalRewardsSBD = 0;
+        let rewards24DPay = 0,
+            rewardsWeekDPay = 0,
+            totalRewardsDPay = 0;
+        let rewards24BBD = 0,
+            rewardsWeekBBD = 0,
+            totalRewardsBBD = 0;
         const today = new Date();
         const oneDay = 86400 * 1000;
         const yesterday = new Date(today.getTime() - oneDay).getTime();
@@ -84,28 +84,28 @@ class AuthorRewards extends React.Component {
                         item[1].op[1].vesting_payout,
                         VEST_TICKER
                     );
-                    const steem = assetFloat(
-                        item[1].op[1].steem_payout,
+                    const dpay = assetFloat(
+                        item[1].op[1].dpay_payout,
                         LIQUID_TICKER
                     );
-                    const sbd = assetFloat(
-                        item[1].op[1].sbd_payout,
+                    const bbd = assetFloat(
+                        item[1].op[1].bbd_payout,
                         DEBT_TICKER
                     );
 
                     if (new Date(item[1].timestamp).getTime() > lastWeek) {
                         if (new Date(item[1].timestamp).getTime() > yesterday) {
                             rewards24Vests += vest;
-                            rewards24Steem += steem;
-                            rewards24SBD += sbd;
+                            rewards24DPay += dpay;
+                            rewards24BBD += bbd;
                         }
                         rewardsWeekVests += vest;
-                        rewardsWeekSteem += steem;
-                        rewardsWeekSBD += sbd;
+                        rewardsWeekDPay += dpay;
+                        rewardsWeekBBD += bbd;
                     }
                     totalRewardsVests += vest;
-                    totalRewardsSteem += steem;
-                    totalRewardsSBD += sbd;
+                    totalRewardsDPay += dpay;
+                    totalRewardsBBD += bbd;
 
                     return (
                         <TransferHistoryRow
@@ -125,12 +125,12 @@ class AuthorRewards extends React.Component {
         const averageCurationVests = !daysOfCuration
             ? 0
             : totalRewardsVests / daysOfCuration;
-        const averageCurationSteem = !daysOfCuration
+        const averageCurationDPay = !daysOfCuration
             ? 0
-            : totalRewardsSteem / daysOfCuration;
-        const averageCurationSBD = !daysOfCuration
+            : totalRewardsDPay / daysOfCuration;
+        const averageCurationBBD = !daysOfCuration
             ? 0
-            : totalRewardsSBD / daysOfCuration;
+            : totalRewardsBBD / daysOfCuration;
         const hasFullWeek = daysOfCuration >= 7;
         const limitedIndex = Math.min(historyIndex, curationLength - 10);
         author_log = author_log.reverse().filter(() => {
@@ -198,9 +198,9 @@ class AuthorRewards extends React.Component {
                             ' ' +
                             VESTING_TOKEN}
                         <br />
-                        {rewardsWeekSteem.toFixed(3) + ' ' + LIQUID_TICKER}
+                        {rewardsWeekDPay.toFixed(3) + ' ' + LIQUID_TICKER}
                         <br />
-                        {rewardsWeekSBD.toFixed(3) + ' ' + DEBT_TOKEN_SHORT}
+                        {rewardsWeekBBD.toFixed(3) + ' ' + DEBT_TOKEN_SHORT}
                     </div>
                 </div>
 

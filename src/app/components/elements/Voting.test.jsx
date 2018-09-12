@@ -17,10 +17,10 @@ window.localStorage = global.localStorage;
 configure({ adapter: new Adapter() });
 
 const mockGlobal = Map({
-    props: Map({ sbd_print_rate: 99 }),
+    props: Map({ bbd_print_rate: 99 }),
     feed_price: Map({
-        base: '5 SBD',
-        quote: '10 STEEM',
+        base: '5 BBD',
+        quote: '10 BEX',
     }),
     content: Map({
         test: Map({
@@ -30,11 +30,11 @@ const mockGlobal = Map({
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
-            percent_steem_dollars: 0,
-            pending_payout_value: '10 SBD',
+            max_accepted_payout: '999999 BBD',
+            percent_dpay_dollars: 0,
+            pending_payout_value: '10 BBD',
             cashout_time: '2018-03-30T10:00:00Z',
-            pending_payout_sbd: 99,
+            pending_payout_bbd: 99,
         }),
     }),
 });
@@ -45,9 +45,9 @@ const voteTestObj = fromJS({
     stats: {
         total_votes: 1,
     },
-    max_accepted_payout: '999999 SBD',
-    percent_steem_dollars: 0,
-    pending_payout_value: '10 SBD',
+    max_accepted_payout: '999999 BBD',
+    percent_dpay_dollars: 0,
+    pending_payout_value: '10 BBD',
     cashout_time: '2018-03-30T10:00:00Z',
 });
 
@@ -69,8 +69,8 @@ describe('Voting', () => {
                 flag={true}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -94,8 +94,8 @@ describe('Voting', () => {
                 flag={true}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -122,8 +122,8 @@ describe('Voting', () => {
                 flag={true}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -160,8 +160,8 @@ describe('Voting', () => {
                 flag={true}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -191,8 +191,8 @@ describe('Voting', () => {
                 flag={true}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -224,8 +224,8 @@ describe('Voting', () => {
                 flag={false}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -250,8 +250,8 @@ describe('Voting', () => {
                 flag={false}
                 vote={(w, p) => {}}
                 post_obj={voteTestObj}
-                price_per_steem={1}
-                sbd_print_rate={10000}
+                price_per_dpay={1}
+                bbd_print_rate={10000}
                 store={mockStore}
             />
         ).dive();
@@ -267,14 +267,14 @@ describe('Voting', () => {
         );
     });
 
-    it('should show all SP if percent_steem_dollars is 0', () => {
+    it('should show all SP if percent_dpay_dollars is 0', () => {
         const post_obj = fromJS({
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
-            percent_steem_dollars: 0,
-            pending_payout_value: '10 SBD',
+            max_accepted_payout: '999999 BBD',
+            percent_dpay_dollars: 0,
+            pending_payout_value: '10 BBD',
             cashout_time: '2018-03-30T10:00:00Z',
         });
         const store = createStore(rootReducer);
@@ -285,26 +285,26 @@ describe('Voting', () => {
                         post="Test post"
                         vote={(w, p) => {}}
                         post_obj={post_obj}
-                        price_per_steem={1}
-                        sbd_print_rate={10000}
+                        price_per_dpay={1}
+                        bbd_print_rate={10000}
                     />
                 </IntlProvider>
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(0.00 SBD, 10.00 SP)'
+            '(0.00 BBD, 10.00 SP)'
         );
     });
 
-    it('should omit liquid steem if print rate is 10000', () => {
+    it('should omit liquid dpay if print rate is 10000', () => {
         const store = createStore(rootReducer);
         const post_obj = fromJS({
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
-            percent_steem_dollars: 10000,
-            pending_payout_value: '10 SBD',
+            max_accepted_payout: '999999 BBD',
+            percent_dpay_dollars: 10000,
+            pending_payout_value: '10 BBD',
             cashout_time: '2018-03-30T10:00:00Z',
         });
         const component = renderer.create(
@@ -314,25 +314,25 @@ describe('Voting', () => {
                         post="Test post"
                         vote={(w, p) => {}}
                         post_obj={post_obj}
-                        price_per_steem={1}
-                        sbd_print_rate={10000}
+                        price_per_dpay={1}
+                        bbd_print_rate={10000}
                     />
                 </IntlProvider>
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(5.00 SBD, 5.00 SP)'
+            '(5.00 BBD, 5.00 SP)'
         );
     });
 
-    it('should show liquid steem if print rate is < 10000', () => {
+    it('should show liquid dpay if print rate is < 10000', () => {
         const post_obj = fromJS({
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
-            percent_steem_dollars: 10000,
-            pending_payout_value: '10 SBD',
+            max_accepted_payout: '999999 BBD',
+            percent_dpay_dollars: 10000,
+            pending_payout_value: '10 BBD',
             cashout_time: '2018-03-30T10:00:00Z',
         });
         const store = createStore(rootReducer);
@@ -343,14 +343,14 @@ describe('Voting', () => {
                         post="Test post"
                         vote={(w, p) => {}}
                         post_obj={post_obj}
-                        price_per_steem={1}
-                        sbd_print_rate={5000}
+                        price_per_dpay={1}
+                        bbd_print_rate={5000}
                     />
                 </IntlProvider>
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(2.50 SBD, 2.50 STEEM, 5.00 SP)'
+            '(2.50 BBD, 2.50 BEX, 5.00 SP)'
         );
     });
 });

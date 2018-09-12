@@ -292,7 +292,7 @@
         }
       }
   }
-  &__resteem-icon {
+  &__repost-icon {
     position: relative;
     top: -1px;
     padding-right: 2px;
@@ -366,7 +366,7 @@
       }
     }
   }
-  &__resteem {
+  &__repost {
     padding-bottom: 0px;
     margin-top: 24px;
 
@@ -378,7 +378,7 @@
         }
       }
   }
-  &__resteem-text {
+  &__repost-text {
     @include font-size(13px);
     margin-bottom: 0px;
     @include themify($themes) {
@@ -389,7 +389,7 @@
       @include font-size(14px);
     }
   }
-  &__resteem-username {
+  &__repost-username {
     @extend .link--secondary;
     text-decoration: none;
   }
@@ -544,7 +544,7 @@
   &__content-block--img + &__content-block--text {
     margin-top: 0;
   }
-  &__resteem, &__content-block--text, &__metadata {
+  &__repost, &__content-block--text, &__metadata {
     @include MQ(M) {
       padding-left: 1.1em;
       padding-right: 1.1em;
@@ -806,11 +806,11 @@ a#changeLayout:focus {
       &__flag {
         top: 0;
       }
-      &__resteem {
+      &__repost {
         padding-bottom: 0;
         border-bottom: transparent;
       }
-      &__resteem, &__content-block--text, &__metadata {
+      &__repost, &__content-block--text, &__metadata {
         @include MQ(M) {
           padding-left: 0;
           padding-right: 0;
@@ -946,13 +946,13 @@ a#changeLayout:focus {
 }
 
 
-.articles__resteem .username {
+.articles__repost .username {
     @extend .link;
     @extend .link--secondary;
     text-decoration: none;
 }
 
 
-.articles__resteem-icon path {
+.articles__repost-icon path {
     fill: #cacaca;
 }

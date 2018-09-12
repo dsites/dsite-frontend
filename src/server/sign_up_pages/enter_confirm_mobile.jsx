@@ -162,8 +162,8 @@ export default function useEnterAndConfirmMobilePages(app) {
                             <p>We need to send you a quick text. </p>
 
                             <p>
-                                With each Steemit account comes a free initial
-                                grant of Steem Power! Phone verification helps
+                                With each dSite account comes a free initial
+                                grant of BEX Power! Phone verification helps
                                 cut down on spam accounts.
                             </p>
 

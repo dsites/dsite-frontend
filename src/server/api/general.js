@@ -14,8 +14,8 @@ import {
 } from 'server/utils/misc';
 import coBody from 'co-body';
 import Mixpanel from 'mixpanel';
-import { PublicKey, Signature, hash } from '@steemit/steem-js/lib/auth/ecc';
-import { api, broadcast } from '@steemit/steem-js';
+import { PublicKey, Signature, hash } from 'dpayjs/lib/auth/ecc';
+import { api, broadcast } from 'dpayjs';
 
 const ACCEPTED_TOS_TAG = 'accepted_tos_20180614';
 
@@ -150,7 +150,7 @@ export default function useGeneralApi(app) {
             //     order: 'id DESC'
             // });
             // if (existing_created_account) {
-            //     throw new Error("Only one Steem account per user is allowed in order to prevent abuse");
+            //     throw new Error("Only one dPay account per user is allowed in order to prevent abuse");
             // }
 
             const remote_ip = getRemoteIp(this.req);
@@ -170,7 +170,7 @@ export default function useGeneralApi(app) {
                         } #${user_id}, IP ${remote_ip}`
                     );
                     throw new Error(
-                        'Only one Steem account allowed per IP address every 10 minutes'
+                        'Only one dPay account allowed per IP address every 10 minutes'
                     );
                 }
             }

@@ -41,7 +41,7 @@ const ABOUT_FLAG = (
 
 const MAX_VOTES_DISPLAY = 20;
 const VOTE_WEIGHT_DROPDOWN_THRESHOLD = 1.0 * 1000.0 * 1000.0;
-const SBD_PRINT_RATE_MAX = 10000;
+const BBD_PRINT_RATE_MAX = 10000;
 const MAX_WEIGHT = 10000;
 
 class Voting extends React.Component {
@@ -62,8 +62,8 @@ class Voting extends React.Component {
         post_obj: PropTypes.object,
         enable_slider: PropTypes.bool,
         voting: PropTypes.bool,
-        price_per_steem: PropTypes.number,
-        sbd_print_rate: PropTypes.number,
+        price_per_dpay: PropTypes.number,
+        bbd_print_rate: PropTypes.number,
     };
 
     static defaultProps = {
@@ -226,8 +226,8 @@ class Voting extends React.Component {
             enable_slider,
             is_comment,
             post_obj,
-            price_per_steem,
-            sbd_print_rate,
+            price_per_dpay,
+            bbd_print_rate,
             username,
         } = this.props;
 
@@ -361,15 +361,15 @@ class Voting extends React.Component {
         const pending_payout = parsePayoutAmount(
             post_obj.get('pending_payout_value')
         );
-        const percent_steem_dollars =
-            post_obj.get('percent_steem_dollars') / 20000;
-        const pending_payout_sbd = pending_payout * percent_steem_dollars;
+        const percent_dpay_dollars =
+            post_obj.get('percent_dpay_dollars') / 20000;
+        const pending_payout_bbd = pending_payout * percent_dpay_dollars;
         const pending_payout_sp =
-            (pending_payout - pending_payout_sbd) / price_per_steem;
-        const pending_payout_printed_sbd =
-            pending_payout_sbd * (sbd_print_rate / SBD_PRINT_RATE_MAX);
-        const pending_payout_printed_steem =
-            (pending_payout_sbd - pending_payout_printed_sbd) / price_per_steem;
+            (pending_payout - pending_payout_bbd) / price_per_dpay;
+        const pending_payout_printed_bbd =
+            pending_payout_bbd * (bbd_print_rate / BBD_PRINT_RATE_MAX);
+        const pending_payout_printed_dpay =
+            (pending_payout_bbd - pending_payout_printed_bbd) / price_per_dpay;
 
         const promoted = parsePayoutAmount(post_obj.get('promoted'));
         const total_author_payout = parsePayoutAmount(
@@ -414,12 +414,12 @@ class Voting extends React.Component {
                 payoutItems.push({
                     value:
                         '(' +
-                        formatDecimal(pending_payout_printed_sbd).join('') +
+                        formatDecimal(pending_payout_printed_bbd).join('') +
                         ' ' +
                         DEBT_TOKEN_SHORT +
                         ', ' +
-                        (sbd_print_rate != SBD_PRINT_RATE_MAX
-                            ? formatDecimal(pending_payout_printed_steem).join(
+                        (bbd_print_rate != BBD_PRINT_RATE_MAX
+                            ? formatDecimal(pending_payout_printed_dpay).join(
                                   ''
                               ) +
                               ' ' +
@@ -631,15 +631,15 @@ export default connect(
         const voting = state.global.get(
             `transaction_vote_active_${author}_${permlink}`
         );
-        let price_per_steem = undefined;
+        let price_per_dpay = undefined;
         const feed_price = state.global.get('feed_price');
         if (feed_price && feed_price.has('base') && feed_price.has('quote')) {
             const { base, quote } = feed_price.toJS();
-            if (/ SBD$/.test(base) && / STEEM$/.test(quote))
-                price_per_steem = parseFloat(base.split(' ')[0]);
+            if (/ BBD$/.test(base) && / BEX$/.test(quote))
+                price_per_dpay = parseFloat(base.split(' ')[0]);
         }
 
-        const sbd_print_rate = state.global.getIn(['props', 'sbd_print_rate']);
+        const bbd_print_rate = state.global.getIn(['props', 'bbd_print_rate']);
         const enable_slider =
             net_vesting_shares > VOTE_WEIGHT_DROPDOWN_THRESHOLD;
 
@@ -656,8 +656,8 @@ export default connect(
             post_obj: post,
             loggedin: username != null,
             voting,
-            price_per_steem,
-            sbd_print_rate,
+            price_per_dpay,
+            bbd_print_rate,
         };
     },
 

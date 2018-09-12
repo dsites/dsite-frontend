@@ -200,12 +200,12 @@ export default class UserProfile extends React.Component {
 
         // const global_status = this.props.global.get('status');
 
-        // let balance_steem = parseFloat(account.balance.split(' ')[0]);
-        // let vesting_steem = vestingSteem(account, gprops).toFixed(2);
-        // const steem_balance_str = numberWithCommas(balance_steem.toFixed(2)) + " STEEM";
-        // const power_balance_str = numberWithCommas(vesting_steem) + " STEEM POWER";
-        // const sbd_balance = parseFloat(account.sbd_balance)
-        // const sbd_balance_str = numberWithCommas('$' + sbd_balance.toFixed(2));
+        // let balance_dpay = parseFloat(account.balance.split(' ')[0]);
+        // let vesting_dpay = vestingDPay(account, gprops).toFixed(2);
+        // const dpay_balance_str = numberWithCommas(balance_dpay.toFixed(2)) + " BEX";
+        // const power_balance_str = numberWithCommas(vesting_dpay) + " BEX POWER";
+        // const bbd_balance = parseFloat(account.bbd_balance)
+        // const bbd_balance_str = numberWithCommas('$' + bbd_balance.toFixed(2));
 
         let rewardsClass = '',
             walletClass = '';

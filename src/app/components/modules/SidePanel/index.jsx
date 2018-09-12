@@ -78,64 +78,64 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
             {
                 value: 'blocktrades',
                 label: 'Blocktrades',
-                link: username ? `https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem&receive_address=${
+                link: username ? `https://blocktrades.us/?input_coin_type=eth&output_coin_type=dpay&receive_address=${
                     username
-                    }` : `https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem`
+                    }` : `https://blocktrades.us/?input_coin_type=eth&output_coin_type=dpay`
                 ,
             },
             {
                 value: 'gopax',
                 label: 'GOPAX',
-                link: 'https://www.gopax.co.kr/exchange/steem-krw/',
+                link: 'https://www.gopax.co.kr/exchange/dpay-krw/',
             },
         ],
         external: [
             {
                 value: 'shop',
                 label: tt('navigation.shop'),
-                link: 'https://thesteemitshop.com/',
+                link: 'https://bex.life/',
             },
             {
-                value: 'chat',
+                value: 'community chat',
                 label: tt('navigation.chat'),
-                link: 'https://steem.chat/home',
+                link: 'https://t.me/trydweb',
             },
             {
-                value: 'jobs',
+                value: 'dweb',
                 label: tt('navigation.jobs'),
-                link: 'https://jobs.lever.co/steemit',
+                link: 'https://dwebs.io',
             },
             {
-                value: 'tools',
+                value: 'dweb dapps',
                 label: tt('navigation.app_center'),
-                link: 'https://steemprojects.com/',
+                link: 'https://getdapps.io/',
             },
             {
                 value: 'api_docs',
                 label: tt('navigation.api_docs'),
-                link: 'https://developers.steem.io/',
+                link: 'https://developers.dpays.io/',
             },
         ],
         organizational: [
             {
-                value: 'bluepaper',
+                value: 'bench dApps',
                 label: tt('navigation.bluepaper'),
-                link: 'https://steem.io/steem-bluepaper.pdf',
+                link: 'https://benchx.io/dapps/',
             },
             {
-                value: 'smt_whitepaper',
+                value: 'Buy BEX',
                 label: tt('navigation.smt_whitepaper'),
-                link: 'https://smt.steem.io/',
+                link: 'https://wallet.bitshares.org/#/market/BEX_BTS',
             },
             {
-                value: 'whitepaper',
+                value: 'Sell BEX',
                 label: tt('navigation.whitepaper'),
-                link: 'https://steem.io/SteemWhitePaper.pdf',
+                link: 'https://wallet.bitshares.org/#/market/BEX_BTS',
             },
             {
                 value: 'about',
                 label: tt('navigation.about'),
-                link: 'https://steem.io',
+                link: 'https://benchx.io',
             },
         ],
         legal: [
@@ -159,7 +159,7 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
             {
                 value: 'signup',
                 label: tt('g.sign_up'),
-                link: 'https://signup.steemit.com',
+                link: 'https://signup.dsite.io',
             },
             {
                 value: 'post',

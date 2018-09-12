@@ -232,7 +232,7 @@ export default function reducer(state = defaultState, action = {}) {
             const idx = active_votes.findIndex(
                 v => v.get('voter') === username
             );
-            // steemd flips weight into percent
+            // dpayd flips weight into percent
             if (idx === -1) {
                 active_votes = active_votes.push(
                     Map({ voter: username, percent: weight })

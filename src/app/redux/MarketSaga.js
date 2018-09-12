@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { api } from '@steemit/steem-js';
+import { api } from 'dpayjs';
 
 import * as marketActions from './MarketReducer';
 import * as appActions from './AppReducer';
@@ -61,7 +61,7 @@ export function* fetchMarket(location_change_action) {
             yield put(marketActions.receiveTicker(state3));
         } catch (error) {
             console.error('~~ Saga fetchMarket error ~~>', error);
-            yield put(appActions.steemApiError(error.message));
+            yield put(appActions.dpayApiError(error.message));
         }
 
         yield call(wait, 3000);
@@ -77,7 +77,7 @@ export function* fetchOpenOrders(set_user_action) {
         yield call(getAccount, username, true);
     } catch (error) {
         console.error('~~ Saga fetchOpenOrders error ~~>', error);
-        yield put(appActions.steemApiError(error.message));
+        yield put(appActions.dpayApiError(error.message));
     }
 }
 

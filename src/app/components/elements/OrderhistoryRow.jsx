@@ -33,8 +33,8 @@ export default class OrderhistoryRow extends React.Component {
         }
 
         // if (this.props.index === 0) {
-        //     console.log("*******\n", nextProps.order.getSBDAmount(), this.props.order.getSBDAmount());
-        //     console.log(nextProps.order.getSteemAmount(), this.props.order.getSteemAmount());
+        //     console.log("*******\n", nextProps.order.getBBDAmount(), this.props.order.getBBDAmount());
+        //     console.log(nextProps.order.getDPayAmount(), this.props.order.getDPayAmount());
         //     console.log(nextProps.order.getPrice(), this.props.order.getPrice());
         // }
     }
@@ -68,8 +68,8 @@ export default class OrderhistoryRow extends React.Component {
                     <TimeAgoWrapper date={order.date} />
                 </td>
                 <td className={order.color}>{order.getStringPrice()}</td>
-                <td>{order.getSteemAmount().toFixed(3)}</td>
-                <td>{order.getSBDAmount().toFixed(3)}</td>
+                <td>{order.getDPayAmount().toFixed(3)}</td>
+                <td>{order.getBBDAmount().toFixed(3)}</td>
             </tr>
         );
     }

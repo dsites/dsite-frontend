@@ -21,14 +21,14 @@ class About extends React.Component {
                     <h2>{tt('about_jsx.about_app', { APP_NAME })}</h2>
                     <p>
                         {tt('about_jsx.about_app_details', { APP_NAME })}
-                        <a href="https://steem.io/">
+                        <a href="https://dsite.io/">
                             {tt('about_jsx.learn_more_at_app_url', { APP_URL })}
                         </a>.
                     </p>
                     <h2>{tt('about_jsx.resources')}</h2>
                     <h3>
                         <a
-                            href="https://steem.io/SteemWhitePaper.pdf"
+                            href="https://developers.dpays.io"
                             onClick={this.navigate}
                         >
                             {tt('navigation.APP_NAME_whitepaper', { APP_NAME })}

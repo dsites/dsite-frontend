@@ -215,7 +215,7 @@ class Post extends React.Component {
                                     className="button e-btn"
                                     onClick={showSignUp}
                                 >
-                                    {tt('loginform_jsx.sign_up_get_steem')}
+                                    {tt('loginform_jsx.sign_up_get_dpay')}
                                 </button>
                             </div>
                         </div>

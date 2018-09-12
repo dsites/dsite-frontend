@@ -8,7 +8,7 @@ New features
  - show order ops in wallet #1144
  - switch to invisible recaptcha #1244
  - votes icon refresh #1110
- - add busy to external links #1117 
+ - add busy to external links #1117
  - simplified/refreshed post hero #1207
  - add post json routes #1122
  - markdown headings in sans #1184
@@ -59,7 +59,7 @@ Bug fixes
  - fetch more followers in batch #1097
  - fall back to rshares sort for comments #1099
  - adjust author heading #1101
- - move the "Steemit Chat" link higher in the main menu #1102
+ - move the "dSite Chat" link higher in the main menu #1102
  - adjust graying and post collapsing rules #1124
  - move witness proxy to bottom of page #1104
  - restore page title when closing modal with ESC #1123
@@ -100,7 +100,7 @@ Bug fixes
  - fix Comments tab truncation #1085
  - use on chain account reg fee instead of config if larger #1069
  - fix upvote slider positioning on mobile & state #1068
- - capitalized steem verbiage for consistency #1048
+ - capitalized dPay verbiage for consistency #1048
 
 
 ---------------------------------------------------------------------
@@ -143,7 +143,7 @@ New features
  - Add a last-minute check to ensure one phone per account #917
  - Add 3x support for thumbnail previews for post previews to remove fuz… #940
  - 914 user thumbnails #934
- - 915 resteem button feeds mobile #937
+ - 915 repost button feeds mobile #937
  - Add metadata to nsfw post summaries #956
  - Update verbiage for flag tooltip for distribution/rewards, update loc… #957
 
@@ -222,7 +222,7 @@ Bug fixes
  - normalize profile url #785
  - enforce display names not starting with `@` #780
  - show 'since date' for view counts on old posts #779
- - handle off screen click on resteem confirm #778
+ - handle off screen click on repost confirm #778
  - revert youtube previews to lower resolution #777
  - remove 0.15.0 compat layer, re-enable Promoted posts #776
  - refactor follow data structure #774
@@ -304,7 +304,7 @@ Bug fixes
 New features and improvements
 --------
 - custom user profile images
-- show dynamic sbd interest in user's wallet
+- show dynamic BBD interest in user's wallet
 - new submenu on the wallet page
 
 Bug fixes
@@ -320,10 +320,10 @@ Bug fixes
 New features and improvements
 --------
 - In app notifications #584
-- New confirmation dialog for resteeming action #572
-- New Profile display user join steem date #582
+- New confirmation dialog for reposting action #572
+- New Profile display user join dPay date #582
 - New hyperlink on post timestamp for content
-- Inclusive of Steemit API docs sub menu
+- Inclusive of dSite API docs sub menu
 - Youtube preview improvements #588
 
 Bug fixes

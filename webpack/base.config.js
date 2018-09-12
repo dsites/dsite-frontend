@@ -39,7 +39,7 @@ module.exports = {
             'react',
             'react-dom',
             'react-router',
-            '@steemit/steem-js',
+            'dpayjs',
             'bytebuffer',
             'immutable',
             'autolinker',

@@ -824,7 +824,7 @@ export default formId =>
                 dispatch(
                     globalActions.setMetaData({
                         id,
-                        meta: jsonMetadata ? jsonMetadata.steem : null,
+                        meta: jsonMetadata ? jsonMetadata.dpay : null,
                     })
                 );
             },
@@ -941,12 +941,12 @@ export default formId =>
                 if (rtags.links.size) meta.links = rtags.links;
                 else delete meta.links;
 
-                meta.app = 'steemit/0.1';
+                meta.app = 'dsite/0.1';
                 if (isStory) {
                     meta.format = isHtml ? 'html' : 'markdown';
                 }
 
-                // if(Object.keys(json_metadata.steem).length === 0) json_metadata = {}// keep json_metadata minimal
+                // if(Object.keys(json_metadata.dpay).length === 0) json_metadata = {}// keep json_metadata minimal
                 const sanitizeErrors = [];
                 sanitize(body, sanitizeConfig({ sanitizeErrors }));
                 if (sanitizeErrors.length) {
@@ -978,15 +978,15 @@ export default formId =>
                     switch (payoutType) {
                         case '0%': // decline payout
                             __config.comment_options = {
-                                max_accepted_payout: '0.000 SBD',
+                                max_accepted_payout: '0.000 BBD',
                             };
                             break;
-                        case '100%': // 100% steem power payout
+                        case '100%': // 100% BEX power payout
                             __config.comment_options = {
-                                percent_steem_dollars: 0, // 10000 === 100% (of 50%)
+                                percent_dpay_dollars: 0, // 10000 === 100% (of 50%)
                             };
                             break;
-                        default: // 50% steem power, 50% sd+steem
+                        default: // 50% BEX power, 50% BBD+BEX
                     }
                 }
 

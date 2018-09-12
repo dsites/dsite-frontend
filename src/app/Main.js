@@ -9,7 +9,7 @@ import Iso from 'iso';
 import { clientRender } from 'shared/UniversalRender';
 import ConsoleExports from './utils/ConsoleExports';
 import { serverApiRecordEvent } from 'app/utils/ServerApiClient';
-import * as steem from '@steemit/steem-js';
+import * as dpay from 'dpayjs';
 import { determineViewMode } from 'app/utils/Links';
 import frontendLogger from 'app/utils/FrontendLogger';
 
@@ -44,9 +44,9 @@ function runApp(initial_state) {
             case CMD_LOG_T:
                 konami.enabled = !konami.enabled;
                 if (konami.enabled) {
-                    steem.api.setOptions({ logger: console });
+                    dpay.api.setOptions({ logger: console });
                 } else {
-                    steem.api.setOptions({ logger: false });
+                    dpay.api.setOptions({ logger: false });
                 }
                 return 'api logging ' + konami.enabled;
             default:
@@ -79,19 +79,19 @@ function runApp(initial_state) {
     }
 
     const config = initial_state.offchain.config;
-    steem.api.setOptions({
-        url: config.steemd_connection_client,
-        useAppbaseApi: !!config.steemd_use_appbase,
+    dpay.api.setOptions({
+        url: config.dpayd_connection_client,
+        useAppbaseApi: !!config.dpayd_use_appbase,
     });
-    steem.config.set('address_prefix', config.address_prefix);
-    steem.config.set('chain_id', config.chain_id);
-    window.$STM_Config = config;
+    dpay.config.set('address_prefix', config.address_prefix);
+    dpay.config.set('chain_id', config.chain_id);
+    window.$DWB_Config = config;
     plugins(config);
     if (initial_state.offchain.serverBusy) {
-        window.$STM_ServerBusy = true;
+        window.$DWB_ServerBusy = true;
     }
     if (initial_state.offchain.csrf) {
-        window.$STM_csrf = initial_state.offchain.csrf;
+        window.$DWB_csrf = initial_state.offchain.csrf;
         delete initial_state.offchain.csrf;
     }
 

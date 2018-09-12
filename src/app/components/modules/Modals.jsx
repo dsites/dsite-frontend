@@ -92,12 +92,12 @@ class Modals extends React.Component {
               })
             : [];
 
-        const buySteemPower = e => {
+        const buyDPayPower = e => {
             if (e && e.preventDefault) e.preventDefault();
             const new_window = window.open();
             new_window.opener = null;
             new_window.location =
-                'https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem_power&receive_address=' +
+                'https://blocktrades.us/?input_coin_type=eth&output_coin_type=dpay_power&receive_address=' +
                 username;
         };
 
@@ -163,8 +163,8 @@ class Modals extends React.Component {
                                     {tt('modals_jsx.out_of_bandwidth_option_3')}
                                 </li>
                             </ol>
-                            <button className="button" onClick={buySteemPower}>
-                                {tt('g.buy_steem_power')}
+                            <button className="button" onClick={buyDPayPower}>
+                                {tt('g.buy_dpay_power')}
                             </button>
                         </div>
                     </Reveal>

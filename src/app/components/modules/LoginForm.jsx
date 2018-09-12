@@ -12,12 +12,12 @@ import reactForm from 'app/utils/ReactForm';
 import { serverApiRecordEvent } from 'app/utils/ServerApiClient';
 import tt from 'counterpart';
 import { APP_URL } from 'app/client_config';
-import { PrivateKey, PublicKey } from '@steemit/steem-js/lib/auth/ecc';
+import { PrivateKey, PublicKey } from 'dpayjs/lib/auth/ecc';
 import { SIGNUP_URL } from 'shared/constants';
 
 class LoginForm extends Component {
     static propTypes = {
-        // Steemit.
+        // DSite.
         login_error: PropTypes.string,
         onCancel: PropTypes.func,
     };
@@ -304,7 +304,7 @@ class LoginForm extends Component {
                     className="button hollow"
                     onClick={this.SignUp}
                 >
-                    {tt('loginform_jsx.sign_up_get_steem')}
+                    {tt('loginform_jsx.sign_up_get_dpay')}
                 </button>
             </div>
         );
@@ -435,7 +435,7 @@ function urlAccountName() {
 }
 
 function checkPasswordChecksum(password) {
-    // A Steemit generated password is a WIF prefixed with a P ..
+    // A dPay generated password is a WIF prefixed with a P ..
     // It is possible to login directly with a WIF
     const wif = /^P/.test(password) ? password.substring(1) : password;
 

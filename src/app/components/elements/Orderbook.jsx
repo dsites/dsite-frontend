@@ -97,7 +97,7 @@ export default class Orderbook extends React.Component {
         let total = 0;
         return orders
             .map((order, index) => {
-                total += order.getSBDAmount();
+                total += order.getBBDAmount();
                 if (
                     index >= (buy ? buyIndex : sellIndex) &&
                     index < (buy ? buyIndex : sellIndex) + 10
@@ -108,7 +108,7 @@ export default class Orderbook extends React.Component {
                             animate={this.state.animate}
                             key={
                                 side +
-                                order.getStringSBD() +
+                                order.getStringBBD() +
                                 order.getStringPrice()
                             }
                             index={index}

@@ -197,7 +197,7 @@ class PostFull extends React.Component {
             encodeURIComponent(s.title) +
             '&url=' +
             encodeURIComponent(s.url) +
-            '&source=Steemit&mini=true';
+            '&source=dSite&mini=true';
         window.open(
             'https://www.linkedin.com/shareArticle?' + q,
             'Share',
@@ -355,14 +355,14 @@ class PostFull extends React.Component {
         const pending_payout = parsePayoutAmount(content.pending_payout_value);
         const total_payout = parsePayoutAmount(content.total_payout_value);
         const high_quality_post = pending_payout + total_payout > 10.0;
-        const full_power = post_content.get('percent_steem_dollars') === 0;
+        const full_power = post_content.get('percent_dpay_dollars') === 0;
 
         let post_header = (
             <h1 className="entry-title">
                 {content.title}
                 {full_power && (
                     <span title={tt('g.powered_up_100')}>
-                        <Icon name="steempower" />
+                        <Icon name="bexpower" />
                     </span>
                 )}
             </h1>

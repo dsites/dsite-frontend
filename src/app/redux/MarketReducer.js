@@ -46,16 +46,16 @@ export default function reducer(state = defaultState, action = {}) {
                         o.sell_price.base.indexOf(LIQUID_TICKER) > 0
                             ? 'ask'
                             : 'bid';
-                    const sbd =
+                    const bbd =
                         type == 'bid' ? o.sell_price.base : o.sell_price.quote;
-                    const steem =
+                    const dpay =
                         type == 'ask' ? o.sell_price.base : o.sell_price.quote;
                     return {
                         ...o,
                         type: type,
-                        price: parseFloat(sbd) / parseFloat(steem),
-                        steem,
-                        sbd,
+                        price: parseFloat(bbd) / parseFloat(dpay),
+                        dpay,
+                        bbd,
                     };
                 })
                 .sort(createOrderSorter(getValue, column, dir));

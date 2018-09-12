@@ -13,7 +13,7 @@ import {
     browserHistory,
 } from 'react-router';
 import { Provider } from 'react-redux';
-import { api } from '@steemit/steem-js';
+import { api } from 'dpayjs';
 
 import RootRoute from 'app/RootRoute';
 import * as appActions from 'app/redux/AppReducer';
@@ -30,7 +30,7 @@ import Translator from 'app/Translator';
 import { routeRegex } from 'app/ResolveRoute';
 import { contentStats } from 'app/utils/StateFunctions';
 import ScrollBehavior from 'scroll-behavior';
-import { getStateAsync } from 'app/utils/steemApi';
+import { getStateAsync } from 'app/utils/dpayApi';
 
 let get_state_perf,
     get_content_perf = false;
@@ -236,7 +236,7 @@ export async function serverRender(
     } catch (e) {
         console.error('Routing error:', e.toString(), location);
         return {
-            title: 'Routing error - Steemit',
+            title: 'Routing error - dSite',
             statusCode: 500,
             body: renderToString(
                 ErrorPage ? <ErrorPage /> : <span>Routing error</span>
@@ -247,7 +247,7 @@ export async function serverRender(
     if (error || !renderProps) {
         // debug('error')('Router error', error);
         return {
-            title: 'Page Not Found - Steemit',
+            title: 'Page Not Found - dSite',
             statusCode: 404,
             body: renderToString(<NotFound />),
         };
@@ -270,7 +270,7 @@ export async function serverRender(
         ) {
             // protect for invalid account
             return {
-                title: 'User Not Found - Steemit',
+                title: 'User Not Found - dSite',
                 statusCode: 404,
                 body: renderToString(<NotFound />),
             };
@@ -279,7 +279,7 @@ export async function serverRender(
         // If we are not loading a post, truncate state data to bring response size down.
         if (!url.match(routeRegex.Post)) {
             for (var key in onchain.content) {
-                //onchain.content[key]['body'] = onchain.content[key]['body'].substring(0, 1024) // TODO: can be removed. will be handled by steemd
+                //onchain.content[key]['body'] = onchain.content[key]['body'].substring(0, 1024) // TODO: can be removed. will be handled by dpayd
                 // Count some stats then remove voting data. But keep current user's votes. (#1040)
                 onchain.content[key]['stats'] = contentStats(
                     onchain.content[key]
@@ -308,7 +308,7 @@ export async function serverRender(
             } else {
                 // protect on invalid user pages (i.e /user/transferss)
                 return {
-                    title: 'Page Not Found - Steemit',
+                    title: 'Page Not Found - dSite',
                     statusCode: 404,
                     body: renderToString(<NotFound />),
                 };
@@ -330,7 +330,7 @@ export async function serverRender(
         if (location.match(routeRegex.UserProfile1)) {
             console.error('User/not found: ', location);
             return {
-                title: 'Page Not Found - Steemit',
+                title: 'Page Not Found - dSite',
                 statusCode: 404,
                 body: renderToString(<NotFound />),
             };
@@ -340,7 +340,7 @@ export async function serverRender(
             const stack_trace = e.stack || '[no stack]';
             console.error('State/store error: ', msg, stack_trace);
             return {
-                title: 'Server error - Steemit',
+                title: 'Server error - dSite',
                 statusCode: 500,
                 body: renderToString(<ErrorPage />),
             };
@@ -367,8 +367,8 @@ export async function serverRender(
     }
 
     return {
-        title: 'Steemit',
-        titleBase: 'Steemit - ',
+        title: 'dSite',
+        titleBase: 'dSite - ',
         meta,
         statusCode: status,
         body: Iso.render(app, server_store.getState()),

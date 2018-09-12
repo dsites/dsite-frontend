@@ -14,8 +14,8 @@ const someOpenOrders = [
         orderid: 1512431634,
         for_sale: 3000,
         sell_price: {
-            base: '3.000 STEEM',
-            quote: '1.998 SBD',
+            base: '3.000 BEX',
+            quote: '1.998 BBD',
         },
         real_price: '0',
         rewarded: false,
@@ -28,8 +28,8 @@ const someOpenOrders = [
         orderid: 1512431689,
         for_sale: 7000,
         sell_price: {
-            base: '7.000 STEEM',
-            quote: '4.578 SBD',
+            base: '7.000 BEX',
+            quote: '4.578 BBD',
         },
         real_price: '0',
         rewarded: false,
@@ -42,8 +42,8 @@ const someOpenOrders = [
         orderid: 1512431835,
         for_sale: 3000,
         sell_price: {
-            base: '3.000 STEEM',
-            quote: '1.953 SBD',
+            base: '3.000 BEX',
+            quote: '1.953 BBD',
         },
         real_price: '0',
         rewarded: false,
@@ -56,8 +56,8 @@ const someOpenOrders = [
         orderid: 1512492109,
         for_sale: 507,
         sell_price: {
-            base: '0.507 SBD',
-            quote: '1.000 STEEM',
+            base: '0.507 BBD',
+            quote: '1.000 BEX',
         },
         real_price: '0',
         rewarded: false,
@@ -70,8 +70,8 @@ const someOpenOrders = [
         orderid: 1512492144,
         for_sale: 507,
         sell_price: {
-            base: '0.507 SBD',
-            quote: '1.000 STEEM',
+            base: '0.507 BBD',
+            quote: '1.000 BEX',
         },
         real_price: '0',
         rewarded: false,
@@ -106,10 +106,10 @@ describe('market reducer', () => {
         const orders = withOrders.get('open_orders');
 
         expect(orders[0].price).toBe(0.666);
-        expect(orders[0].sbd).toBe('1.998 SBD');
+        expect(orders[0].bbd).toBe('1.998 BBD');
         expect(orders[1].type).toBe('ask');
         expect(orders[2].price).toBe(0.651);
-        expect(orders[2].sbd).toBe('1.953 SBD');
+        expect(orders[2].bbd).toBe('1.953 BBD');
         expect(orders[3].type).toBe('bid');
         expect(orders[3].type).toBe('bid');
     });

@@ -61,7 +61,7 @@ storiesOf('Cards', module)
                                         amount: `${number(
                                             'amount',
                                             138.69
-                                        )} STEEM`,
+                                        )} BEX`,
                                         to: select(
                                             'to user (affects transfer_to_vesting)',
                                             ['userA', 'userB', 'userC'],
@@ -91,24 +91,24 @@ storiesOf('Cards', module)
                                         request_id: '142857',
                                         comment_author: 'comment author',
                                         comment_permlink: 'comment permlink',
-                                        sbd_payout: `${text(
-                                            'sbd_payout',
+                                        bbd_payout: `${text(
+                                            'bbd_payout',
                                             '0.000'
-                                        )} SBD`,
-                                        steem_payout: `${text(
-                                            'steem_payout',
+                                        )} BBD`,
+                                        dpay_payout: `${text(
+                                            'dpay_payout',
                                             '0.000'
-                                        )} STEEM`,
+                                        )} BEX`,
                                         author: 'author',
                                         permlink: 'permlink',
-                                        reward_steem: `${text(
-                                            'reward_steem',
+                                        reward_dpay: `${text(
+                                            'reward_dpay',
                                             '1.234'
-                                        )} STEEM`,
-                                        reward_sbd: `${text(
-                                            'reward_sbd',
+                                        )} BEX`,
+                                        reward_bbd: `${text(
+                                            'reward_bbd',
                                             '3.456'
-                                        )} SBD`,
+                                        )} BBD`,
                                         interest: 1.234,
                                         amount_in: 1.234,
                                         amount_out: 1.234,

@@ -249,7 +249,7 @@ class PostsIndex extends React.Component {
                     ) : (
                         this.props.isBrowser && (
                             <div>
-                                {/* <SidebarStats steemPower={123} followers={23} reputation={62} />  */}
+                                {/* <SidebarStats dpayPower={123} followers={23} reputation={62} />  */}
                                 <SidebarLinks username={this.props.username} />
                             </div>
                         )

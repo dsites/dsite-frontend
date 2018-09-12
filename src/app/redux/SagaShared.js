@@ -1,12 +1,12 @@
 import { fromJS } from 'immutable';
 import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
 import tt from 'counterpart';
-import { api } from '@steemit/steem-js';
+import { api } from 'dpayjs';
 import * as globalActions from './GlobalReducer';
 import * as appActions from './AppReducer';
 import * as transactionActions from './TransactionReducer';
 import { setUserPreferences } from 'app/utils/ServerApiClient';
-import { getStateAsync } from 'app/utils/steemApi';
+import { getStateAsync } from 'app/utils/dpayApi';
 
 const wait = ms =>
     new Promise(resolve => {
@@ -47,7 +47,7 @@ export function* getState({ payload: { url } }) {
         yield put(globalActions.receiveState(state));
     } catch (error) {
         console.error('~~ Saga getState error ~~>', url, error);
-        yield put(appActions.steemApiError(error.message));
+        yield put(appActions.dpayApiError(error.message));
     }
 }
 

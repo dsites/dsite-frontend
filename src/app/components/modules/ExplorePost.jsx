@@ -17,21 +17,21 @@ class ExplorePost extends Component {
             copied: false,
         };
         this.onCopy = this.onCopy.bind(this);
-        this.Steemd = this.Steemd.bind(this);
-        this.Steemdb = this.Steemdb.bind(this);
-        this.Busy = this.Busy.bind(this);
+        this.DPayd = this.DPayd.bind(this);
+        this.DPaydb = this.DPaydb.bind(this);
+        this.DSocial = this.DSocial.bind(this);
     }
 
-    Steemd() {
-        serverApiRecordEvent('SteemdView', this.props.permlink);
+    DPayd() {
+        serverApiRecordEvent('DPaydView', this.props.permlink);
     }
 
-    Steemdb() {
-        serverApiRecordEvent('SteemdbView', this.props.permlink);
+    DPaydb() {
+        serverApiRecordEvent('DPaydbView', this.props.permlink);
     }
 
-    Busy() {
-        serverApiRecordEvent('Busy view', this.props.permlink);
+    DSocial() {
+        serverApiRecordEvent('DSocial view', this.props.permlink);
     }
 
     onCopy() {
@@ -42,10 +42,10 @@ class ExplorePost extends Component {
 
     render() {
         const link = this.props.permlink;
-        const steemd = 'https://steemd.com' + link;
-        const steemdb = 'https://steemdb.com' + link;
-        const busy = 'https://busy.org' + link;
-        const steemit = 'https://steemit.com' + link;
+        const dpayd = 'https://bex.network' + link;
+        const dpaydb = 'https://bex.network' + link;
+        const dsocial = 'https://dsocial.io' + link;
+        const dsite = 'https://dsite.io' + link;
         let text =
             this.state.copied == true
                 ? tt('explorepost_jsx.copied')
@@ -58,11 +58,11 @@ class ExplorePost extends Component {
                     <input
                         className="input-group-field share-box"
                         type="text"
-                        value={steemit}
+                        value={dsite}
                         onChange={e => e.preventDefault()}
                     />
                     <CopyToClipboard
-                        text={steemit}
+                        text={dsite}
                         onCopy={this.onCopy}
                         className="ExplorePost__copy-button input-group-label"
                     >
@@ -73,32 +73,32 @@ class ExplorePost extends Component {
                 <ul>
                     <li>
                         <a
-                            href={steemd}
-                            onClick={this.Steemd}
+                            href={dpayd}
+                            onClick={this.DPayd}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            steemd.com <Icon name="extlink" />
+                            bex.network <Icon name="extlink" />
                         </a>
                     </li>
                     <li>
                         <a
-                            href={steemdb}
-                            onClick={this.Steemdb}
+                            href={dpaydb}
+                            onClick={this.DPaydb}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            steemdb.com <Icon name="extlink" />
+                            dpaydb.com <Icon name="extlink" />
                         </a>
                     </li>
                     <li>
                         <a
-                            href={busy}
-                            onClick={this.Busy}
+                            href={dsocial}
+                            onClick={this.DSocial}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            busy.org <Icon name="extlink" />
+                            dsocial.io <Icon name="extlink" />
                         </a>
                     </li>
                 </ul>

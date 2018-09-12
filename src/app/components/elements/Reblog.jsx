@@ -105,7 +105,7 @@ module.exports = connect(
                         id: 'follow',
                         required_posting_auths: [account],
                         json: JSON.stringify(json),
-                        __config: { title: tt('g.resteem_this_post') },
+                        __config: { title: tt('g.repost_this_post') },
                     },
                     successCallback,
                     errorCallback,

@@ -4,8 +4,8 @@ import tt from 'counterpart';
 import getSlug from 'speakingurl';
 import base58 from 'bs58';
 import secureRandom from 'secure-random';
-import { PrivateKey, PublicKey } from '@steemit/steem-js/lib/auth/ecc';
-import { api, broadcast, auth, memo } from '@steemit/steem-js';
+import { PrivateKey, PublicKey } from 'dpayjs/lib/auth/ecc';
+import { api, broadcast, auth, memo } from 'dpayjs';
 
 import { getAccount, getContent } from 'app/redux/SagaShared';
 import { findSigningKey } from 'app/redux/AuthSaga';
@@ -412,7 +412,7 @@ function* broadcastPayload({
 
 function* accepted_comment({ operation }) {
     const { author, permlink } = operation;
-    // update again with new $$ amount from the steemd node
+    // update again with new $$ amount from the dpayd node
     yield call(getContent, { author, permlink });
     // receiveComment did the linking already (but that is commented out)
     yield put(globalActions.linkReply(operation));
@@ -431,7 +431,7 @@ function* accepted_vote({ operation: { author, permlink, weight } }) {
         author + '/' + permlink,
         'weight'
     );
-    // update again with new $$ amount from the steemd node
+    // update again with new $$ amount from the dpayd node
     yield put(
         globalActions.remove({
             key: `transaction_vote_active_${author}_${permlink}`,
@@ -514,7 +514,7 @@ export function* preBroadcast_comment({ operation, username }) {
 
     body = body.trim();
 
-    // TODO Slightly smaller blockchain comments: if body === json_metadata.steem.link && Object.keys(steem).length > 1 remove steem.link ..This requires an adjust of get_state and the API refresh of the comment to put the steem.link back if Object.keys(steem).length >= 1
+    // TODO Slightly smaller blockchain comments: if body === json_metadata.dpay.link && Object.keys(dpay).length > 1 remove dpay.link ..This requires an adjust of get_state and the API refresh of the comment to put the dpay.link back if Object.keys(dpay).length >= 1
 
     let body2;
     if (originalBody) {
@@ -550,7 +550,7 @@ export function* preBroadcast_comment({ operation, username }) {
     if (comment_options) {
         const {
             max_accepted_payout = ['1000000.000', DEBT_TICKER].join(' '),
-            percent_steem_dollars = 10000, // 10000 === 100%
+            percent_dpay_dollars = 10000, // 10000 === 100%
             allow_votes = true,
             allow_curation_rewards = true,
         } = comment_options;
@@ -560,7 +560,7 @@ export function* preBroadcast_comment({ operation, username }) {
                 author,
                 permlink,
                 max_accepted_payout,
-                percent_steem_dollars,
+                percent_dpay_dollars,
                 allow_votes,
                 allow_curation_rewards,
                 extensions: comment_options.extensions
@@ -597,7 +597,7 @@ export function* createPermlink(title, author, parent_author, parent_permlink) {
         permlink = `re-${parent_author}-${parent_permlink}-${timeStr}`;
     }
     if (permlink.length > 255) {
-        // STEEMIT_MAX_PERMLINK_LENGTH
+        // DPAY_MAX_PERMLINK_LENGTH
         permlink = permlink.substring(permlink.length - 255, permlink.length);
     }
     // only letters numbers and dashes shall survive
@@ -815,7 +815,7 @@ export function* recoverAccount({
 }
 
 /** auths must start with most powerful key: owner for example */
-// const twofaAccount = 'steem'
+// const twofaAccount = 'dpay'
 export function* updateAuthorities({
     payload: { accountName, signingKey, auths, twofa, onSuccess, onError },
 }) {
@@ -955,7 +955,7 @@ export function* updateAuthorities({
 }
 
 /** auths must start with most powerful key: owner for example */
-// const twofaAccount = 'steem'
+// const twofaAccount = 'dpay'
 export function* updateMeta(params) {
     // console.log('params', params)
     const {

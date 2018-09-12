@@ -5,11 +5,11 @@ module.exports = {
     category: 'dtube',
     parent_author: '',
     parent_permlink: 'dtube',
-    title: 'The First YouTube Ad for STEEMIT in 2018! [DTube]',
+    title: 'The First YouTube Ad for DSITE in 2018! [dVideo]',
     body:
-        "<center><a href='https://d.tube/#!/v/joeparys/zm1p9aij'><img src='https://snap1.d.tube/ipfs/QmQ7vH8eZdZDYyyyDf4DNHJ7zJLY1wW7WUexpzAPwRfCe1'></a></center><hr>\n\nHi DTube!\n\nCheck out this Ad I made for Steemit to kick off 2018! \n\nEvery upvote of this video on DTube will help with additional funding on YouTube for Ads! \n\nWe are spending a total of $5,000 to advertise this video and already have thousands of views! \n\nThanks for your support! \n\nEvery upvote of this post will go directly back into our amazing community\n\nIf you enjoyed this post would you please give it an upvote, like, and follow me @joeparys\n\nThanks for watching :)\n\nClick the bell icon to turn on my post notifications!\n\nHELP ME REACH 2,500 FOLLOWERS! FOLLOW ME:\nSteemit: https://steemit.com/@joeparys/\nFacebook: (https://www.facebook.com/JoeParysAcademy/)\nWebsite: http://www.joeparys.com\n\n<hr><a href='https://d.tube/#!/v/joeparys/zm1p9aij'> ▶️ DTube</a><br /><a href='https://ipfs.io/ipfs/QmbVmFaDwJdNwiYoTkgMp41g7cbXYyLaHkbS2ixeyqNnhR'> ▶️ IPFS</a>",
+        "<center><a href='https://d.tube/#!/v/joeparys/zm1p9aij'><img src='https://snap1.d.tube/ipfs/QmQ7vH8eZdZDYyyyDf4DNHJ7zJLY1wW7WUexpzAPwRfCe1'></a></center><hr>\n\nHi dVideo!\n\nCheck out this Ad I made for dSite to kick off 2018! \n\nEvery upvote of this video on dVideo will help with additional funding on YouTube for Ads! \n\nWe are spending a total of $5,000 to advertise this video and already have thousands of views! \n\nThanks for your support! \n\nEvery upvote of this post will go directly back into our amazing community\n\nIf you enjoyed this post would you please give it an upvote, like, and follow me @joeparys\n\nThanks for watching :)\n\nClick the bell icon to turn on my post notifications!\n\nHELP ME REACH 2,500 FOLLOWERS! FOLLOW ME:\dSite: https://dsite.io/@joeparys/\nFacebook: (https://www.facebook.com/JoeParysAcademy/)\nWebsite: http://www.joeparys.com\n\n<hr><a href='https://d.tube/#!/v/joeparys/zm1p9aij'> ▶️ dVideo</a><br /><a href='https://ipfs.io/ipfs/QmbVmFaDwJdNwiYoTkgMp41g7cbXYyLaHkbS2ixeyqNnhR'> ▶️ IPFS</a>",
     json_metadata:
-        '{"video":{"info":{"title":"The First YouTube Ad for STEEMIT in 2018!","snaphash":"QmQ7vH8eZdZDYyyyDf4DNHJ7zJLY1wW7WUexpzAPwRfCe1","author":"joeparys","permlink":"zm1p9aij","duration":180.821333,"filesize":455412630,"spritehash":"QmSGrQKUcFzbvqDpj36zyyghKsngetKhwHqVC8CNcHp69J"},"content":{"videohash":"QmbVmFaDwJdNwiYoTkgMp41g7cbXYyLaHkbS2ixeyqNnhR","video480hash":"QmcBEJgnoznmE96oCcXUjvZgynHzAxfCrLqXy9uFGTubmf","magnet":"magnet:?xt=urn:btih:27ad561092610f6706404eb658d41d14dae1de88&dn=Steemit+Video+Jerry+Final.mp4&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com","description":"Hi DTube!\\n\\nCheck out this Ad I made for Steemit to kick off 2018! \\n\\nEvery upvote of this video on DTube will help with additional funding on YouTube for Ads! \\n\\nWe are spending a total of $5,000 to advertise this video and already have thousands of views! \\n\\nThanks for your support! \\n\\nEvery upvote of this post will go directly back into our amazing community\\n\\nIf you enjoyed this post would you please give it an upvote, like, and follow me @joeparys\\n\\nThanks for watching :)\\n\\nClick the bell icon to turn on my post notifications!\\n\\nHELP ME REACH 2,500 FOLLOWERS! FOLLOW ME:\\nSteemit: https://steemit.com/@joeparys/\\nFacebook: (https://www.facebook.com/JoeParysAcademy/)\\nWebsite: http://www.joeparys.com","tags":["dtube","steemit","steem","cryptocurrency"]},"_id":"27af8d4eb6b4550401768237b1405463"},"tags":["dtube","steemit","steem","cryptocurrency"],"app":"steemit/0.1","users":["joeparys"],"image":["https://snap1.d.tube/ipfs/QmQ7vH8eZdZDYyyyDf4DNHJ7zJLY1wW7WUexpzAPwRfCe1"],"links":["https://d.tube/#!/v/joeparys/zm1p9aij","https://steemit.com/@joeparys/","https://www.facebook.com/JoeParysAcademy/","http://www.joeparys.com","https://ipfs.io/ipfs/QmbVmFaDwJdNwiYoTkgMp41g7cbXYyLaHkbS2ixeyqNnhR"],"format":"markdown"}',
+        '{"video":{"info":{"title":"The First YouTube Ad for DSITE in 2018!","snaphash":"QmQ7vH8eZdZDYyyyDf4DNHJ7zJLY1wW7WUexpzAPwRfCe1","author":"joeparys","permlink":"zm1p9aij","duration":180.821333,"filesize":455412630,"spritehash":"QmSGrQKUcFzbvqDpj36zyyghKsngetKhwHqVC8CNcHp69J"},"content":{"videohash":"QmbVmFaDwJdNwiYoTkgMp41g7cbXYyLaHkbS2ixeyqNnhR","video480hash":"QmcBEJgnoznmE96oCcXUjvZgynHzAxfCrLqXy9uFGTubmf","magnet":"magnet:?xt=urn:btih:27ad561092610f6706404eb658d41d14dae1de88&dn=dSite+Video+Jerry+Final.mp4&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com","description":"Hi dVideo!\\n\\nCheck out this Ad I made for dSite to kick off 2018! \\n\\nEvery upvote of this video on dVideo will help with additional funding on YouTube for Ads! \\n\\nWe are spending a total of $5,000 to advertise this video and already have thousands of views! \\n\\nThanks for your support! \\n\\nEvery upvote of this post will go directly back into our amazing community\\n\\nIf you enjoyed this post would you please give it an upvote, like, and follow me @joeparys\\n\\nThanks for watching :)\\n\\nClick the bell icon to turn on my post notifications!\\n\\nHELP ME REACH 2,500 FOLLOWERS! FOLLOW ME:\\dSite: https://dsite.io/@joeparys/\\nFacebook: (https://www.facebook.com/JoeParysAcademy/)\\nWebsite: http://www.joeparys.com","tags":["dtube","dsite","dpay","cryptocurrency"]},"_id":"27af8d4eb6b4550401768237b1405463"},"tags":["dtube","dsite","dpay","cryptocurrency"],"app":"dsite/0.1","users":["joeparys"],"image":["https://snap1.d.tube/ipfs/QmQ7vH8eZdZDYyyyDf4DNHJ7zJLY1wW7WUexpzAPwRfCe1"],"links":["https://d.tube/#!/v/joeparys/zm1p9aij","https://dsite.io/@joeparys/","https://www.facebook.com/JoeParysAcademy/","http://www.joeparys.com","https://ipfs.io/ipfs/QmbVmFaDwJdNwiYoTkgMp41g7cbXYyLaHkbS2ixeyqNnhR"],"format":"markdown"}',
     last_update: '2018-01-08T16:15:06',
     created: '2018-01-08T16:14:00',
     active: '2018-01-09T23:36:06',
@@ -24,13 +24,13 @@ module.exports = {
     max_cashout_time: '1969-12-31T23:59:59',
     total_vote_weight: 12605229,
     reward_weight: 10000,
-    total_payout_value: '0.000 SBD',
-    curator_payout_value: '0.000 SBD',
+    total_payout_value: '0.000 BBD',
+    curator_payout_value: '0.000 BBD',
     author_rewards: 0,
     net_votes: 2017,
     root_comment: 24398348,
-    max_accepted_payout: '1000000.000 SBD',
-    percent_steem_dollars: 10000,
+    max_accepted_payout: '1000000.000 BBD',
+    percent_dpay_dollars: 10000,
     allow_replies: true,
     allow_votes: true,
     allow_curation_rewards: true,
@@ -41,9 +41,9 @@ module.exports = {
         },
     ],
     url: '/dtube/@joeparys/zm1p9aij',
-    root_title: 'The First YouTube Ad for STEEMIT in 2018! [DTube]',
-    pending_payout_value: '1665.698 SBD',
-    total_pending_payout_value: '0.000 STEEM',
+    root_title: 'The First YouTube Ad for DSITE in 2018! [dVideo]',
+    pending_payout_value: '1665.698 BBD',
+    total_pending_payout_value: '0.000 BEX',
     active_votes: [
         {
             voter: 'analisa',
@@ -150,7 +150,7 @@ module.exports = {
             time: '2018-01-08T19:33:12',
         },
         {
-            voter: 'teamsteem',
+            voter: 'teamdpay',
             weight: 686782,
             rshares: '11522295760925',
             percent: 10000,
@@ -478,7 +478,7 @@ module.exports = {
             time: '2018-01-09T04:26:24',
         },
         {
-            voter: 'steemitpatina',
+            voter: 'dsitepatina',
             weight: 2436,
             rshares: '40876817247',
             percent: 8300,
@@ -606,7 +606,7 @@ module.exports = {
             time: '2018-01-09T04:55:42',
         },
         {
-            voter: 'steemtruth',
+            voter: 'dpaytruth',
             weight: 1572,
             rshares: '26361825476',
             percent: 700,
@@ -830,7 +830,7 @@ module.exports = {
             time: '2018-01-08T22:25:24',
         },
         {
-            voter: 'martunisteem',
+            voter: 'martunidpay',
             weight: 100,
             rshares: 1674427558,
             percent: 10000,
@@ -1310,7 +1310,7 @@ module.exports = {
             time: '2018-01-09T03:37:54',
         },
         {
-            voter: 'steemy-pile',
+            voter: 'dpayy-pile',
             weight: 156,
             rshares: 2621575814,
             percent: 10000,
@@ -1510,7 +1510,7 @@ module.exports = {
             time: '2018-01-08T19:10:48',
         },
         {
-            voter: 'steematis',
+            voter: 'dpayatis',
             weight: 1221,
             rshares: '20490394010',
             percent: 10000,
@@ -2022,7 +2022,7 @@ module.exports = {
             time: '2018-01-09T12:34:00',
         },
         {
-            voter: 'steemrollin369',
+            voter: 'dpayrollin369',
             weight: 111,
             rshares: 1867779914,
             percent: 10000,
@@ -2046,7 +2046,7 @@ module.exports = {
             time: '2018-01-08T17:46:09',
         },
         {
-            voter: 'hendrasteem',
+            voter: 'hendradpay',
             weight: 4,
             rshares: 59521150,
             percent: 10000,
@@ -3070,7 +3070,7 @@ module.exports = {
             time: '2018-01-09T14:58:24',
         },
         {
-            voter: 'resteem.bot',
+            voter: 'repost.bot',
             weight: 12,
             rshares: 187741664,
             percent: 10000,
@@ -3710,7 +3710,7 @@ module.exports = {
             time: '2018-01-09T09:23:36',
         },
         {
-            voter: 'taminsteem',
+            voter: 'tamindpay',
             weight: 18,
             rshares: 298033989,
             percent: 10000,
@@ -4598,7 +4598,7 @@ module.exports = {
             time: '2018-01-09T02:14:12',
         },
         {
-            voter: 'steemcafe',
+            voter: 'dpaycafe',
             weight: 59,
             rshares: 500939678,
             percent: 10000,
@@ -5614,7 +5614,7 @@ module.exports = {
             time: '2018-01-09T09:01:42',
         },
         {
-            voter: 'steemblogger',
+            voter: 'dpayblogger',
             weight: 34,
             rshares: 574309500,
             percent: 10000,
@@ -7518,7 +7518,7 @@ module.exports = {
             time: '2018-01-09T15:24:06',
         },
         {
-            voter: 'steemboat-steve',
+            voter: 'dpayboat-steve',
             weight: 639,
             rshares: '10719377484',
             percent: 10000,
@@ -9134,7 +9134,7 @@ module.exports = {
             time: '2018-01-09T05:00:57',
         },
         {
-            voter: 'a-acehsteem',
+            voter: 'a-acehdpay',
             weight: 16,
             rshares: 270398025,
             percent: 10000,
@@ -9222,7 +9222,7 @@ module.exports = {
             time: '2018-01-09T18:25:54',
         },
         {
-            voter: 'itsteems',
+            voter: 'itdpays',
             weight: 13,
             rshares: 424005000,
             percent: 10000,
@@ -10222,7 +10222,7 @@ module.exports = {
             time: '2018-01-09T04:01:21',
         },
         {
-            voter: 'nazarsteem',
+            voter: 'nazardpay',
             weight: 51,
             rshares: 435183369,
             percent: 10000,
@@ -11310,7 +11310,7 @@ module.exports = {
             time: '2018-01-08T21:18:39',
         },
         {
-            voter: 'acongsteemer',
+            voter: 'acongdpayer',
             weight: 3468,
             rshares: '58190916943',
             percent: 10000,
@@ -11462,7 +11462,7 @@ module.exports = {
             time: '2018-01-09T02:02:27',
         },
         {
-            voter: 'steemlion',
+            voter: 'dpaylion',
             weight: 17,
             rshares: 282670000,
             percent: 10000,
@@ -12166,7 +12166,7 @@ module.exports = {
             time: '2018-01-08T22:19:36',
         },
         {
-            voter: 'zaggysteem',
+            voter: 'zaggydpay',
             weight: 34,
             rshares: 571485000,
             percent: 10000,
@@ -13590,7 +13590,7 @@ module.exports = {
             time: '2018-01-09T20:01:33',
         },
         {
-            voter: 'miss.steem',
+            voter: 'miss.dpay',
             weight: 36,
             rshares: 614500000,
             percent: 10000,
@@ -15142,7 +15142,7 @@ module.exports = {
             time: '2018-01-09T04:02:33',
         },
         {
-            voter: 'memsteem',
+            voter: 'memdpay',
             weight: 69,
             rshares: 1160483655,
             percent: 10000,
@@ -16320,7 +16320,7 @@ module.exports = {
     ],
     replies: [],
     author_reputation: '16463091699678',
-    promoted: '0.000 SBD',
+    promoted: '0.000 BBD',
     body_length: 0,
     reblogged_by: [],
 };

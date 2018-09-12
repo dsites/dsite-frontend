@@ -76,7 +76,7 @@ class PromotePost extends Component {
     render() {
         const { amount, loading, amountError, trxError } = this.state;
         const { currentAccount } = this.props;
-        const balanceValue = currentAccount.get('sbd_balance');
+        const balanceValue = currentAccount.get('bbd_balance');
         const balance = balanceValue ? balanceValue.split(' ')[0] : 0.0;
         const submitDisabled = !amount;
 

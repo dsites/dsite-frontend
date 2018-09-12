@@ -6,14 +6,14 @@ import {
     takeLatest,
     takeEvery,
 } from 'redux-saga/effects';
-import { api } from '@steemit/steem-js';
+import { api } from 'dpayjs';
 import { loadFollows, fetchFollowCount } from 'app/redux/FollowSaga';
 import { getContent } from 'app/redux/SagaShared';
 import * as globalActions from './GlobalReducer';
 import * as appActions from './AppReducer';
 import constants from './constants';
 import { fromJS, Map, Set } from 'immutable';
-import { getStateAsync } from 'app/utils/steemApi';
+import { getStateAsync } from 'app/utils/dpayApi';
 
 const REQUEST_DATA = 'fetchDataSaga/REQUEST_DATA';
 const GET_CONTENT = 'fetchDataSaga/GET_CONTENT';
@@ -73,7 +73,7 @@ export function* fetchState(location_change_action) {
         yield call(getTransferUsers, pathname);
     } catch (error) {
         console.error('~~ Saga fetchState error ~~>', url, error);
-        yield put(appActions.steemApiError(error.message));
+        yield put(appActions.dpayApiError(error.message));
     }
 
     yield put(appActions.fetchDataEnd());
@@ -251,7 +251,7 @@ export function* fetchData(action) {
             },
         ];
     } else if (order === 'by_feed') {
-        // https://github.com/steemit/steem/issues/249
+        // https://github.com/dpays/dpay/issues/249
         call_name = 'getDiscussionsByFeedAsync';
         args = [
             {
@@ -306,7 +306,7 @@ export function* fetchData(action) {
         );
     } catch (error) {
         console.error('~~ Saga fetchData error ~~>', call_name, args, error);
-        yield put(appActions.steemApiError(error.message));
+        yield put(appActions.dpayApiError(error.message));
     }
     yield put(appActions.fetchDataEnd());
 }

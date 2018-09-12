@@ -17,20 +17,20 @@ export function vestsToSpf(state, vesting_shares) {
         global.getIn(['props', 'total_vesting_shares']),
         VEST_TICKER
     );
-    const total_vest_steem = assetFloat(
-        global.getIn(['props', 'total_vesting_fund_steem']),
+    const total_vest_dpay = assetFloat(
+        global.getIn(['props', 'total_vesting_fund_dpay']),
         LIQUID_TICKER
     );
-    return total_vest_steem * (vests / total_vests);
+    return total_vest_dpay * (vests / total_vests);
 }
 
 export function vestsToSp(state, vesting_shares) {
     return vestsToSpf(state, vesting_shares).toFixed(3);
 }
 
-export function spToVestsf(state, steem_power) {
+export function spToVestsf(state, dpay_power) {
     const { global } = state;
-    let power = steem_power;
+    let power = dpay_power;
     if (typeof power === 'string') {
         power = assetFloat(power, LIQUID_TICKER);
     }
@@ -38,29 +38,29 @@ export function spToVestsf(state, steem_power) {
         global.getIn(['props', 'total_vesting_shares']),
         VEST_TICKER
     );
-    const total_vest_steem = assetFloat(
-        global.getIn(['props', 'total_vesting_fund_steem']),
+    const total_vest_dpay = assetFloat(
+        global.getIn(['props', 'total_vesting_fund_dpay']),
         LIQUID_TICKER
     );
-    return steem_power / total_vest_steem * total_vests;
+    return dpay_power / total_vest_dpay * total_vests;
 }
 
 export function spToVests(state, vesting_shares) {
     return spToVestsf(state, vesting_shares).toFixed(6);
 }
 
-export function vestingSteem(account, gprops) {
+export function vestingDPay(account, gprops) {
     const vests = parseFloat(account.vesting_shares.split(' ')[0]);
     const total_vests = parseFloat(gprops.total_vesting_shares.split(' ')[0]);
-    const total_vest_steem = parseFloat(
-        gprops.total_vesting_fund_steem.split(' ')[0]
+    const total_vest_dpay = parseFloat(
+        gprops.total_vesting_fund_dpay.split(' ')[0]
     );
-    const vesting_steemf = total_vest_steem * (vests / total_vests);
-    return vesting_steemf;
+    const vesting_dpayf = total_vest_dpay * (vests / total_vests);
+    return vesting_dpayf;
 }
 
-// How much STEEM this account has delegated out (minus received).
-export function delegatedSteem(account, gprops) {
+// How much BEX this account has delegated out (minus received).
+export function delegatedDPay(account, gprops) {
     const delegated_vests = parseFloat(
         account.delegated_vesting_shares.split(' ')[0]
     );
@@ -69,11 +69,11 @@ export function delegatedSteem(account, gprops) {
     );
     const vests = delegated_vests - received_vests;
     const total_vests = parseFloat(gprops.total_vesting_shares.split(' ')[0]);
-    const total_vest_steem = parseFloat(
-        gprops.total_vesting_fund_steem.split(' ')[0]
+    const total_vest_dpay = parseFloat(
+        gprops.total_vesting_fund_dpay.split(' ')[0]
     );
-    const vesting_steemf = total_vest_steem * (vests / total_vests);
-    return vesting_steemf;
+    const vesting_dpayf = total_vest_dpay * (vests / total_vests);
+    return vesting_dpayf;
 }
 
 export function assetFloat(str, asset) {

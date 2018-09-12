@@ -86,7 +86,7 @@ export function sortComments(cont, comments, sort_order) {
             if (apayout !== bpayout) {
                 return bpayout - apayout;
             }
-            // If SBD payouts were equal, fall back to rshares sorting
+            // If BBD payouts were equal, fall back to rshares sorting
             return netRshares(bcontent).compare(netRshares(acontent));
         },
         author_reputation: (a, b) => {
@@ -295,7 +295,7 @@ class CommentImpl extends React.Component {
             // console.error('Invalid json metadata string', json_metadata, 'in post', this.props.content);
         }
         // const get_asset_value = ( asset_str ) => { return parseFloat( asset_str.split(' ')[0] ); }
-        // const steem_supply = this.props.global.getIn(['props','current_supply']);
+        // const dpay_supply = this.props.global.getIn(['props','current_supply']);
 
         // hide images if author is in blacklist
         const hideImages = ImageUserBlockList.includes(author);

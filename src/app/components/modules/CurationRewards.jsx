@@ -26,7 +26,7 @@ class CurationRewards extends React.Component {
         this.onShowDeposit = () => {
             this.setState({ showDeposit: !this.state.showDeposit });
         };
-        this.onShowDepositSteem = () => {
+        this.onShowDepositDPay = () => {
             this.setState({
                 showDeposit: !this.state.showDeposit,
                 depositType: LIQUID_TICKER,

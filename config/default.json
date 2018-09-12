@@ -1,12 +1,12 @@
 {
-  "database_url": "mysql://root:password@127.0.0.1/steemit_dev",
+  "database_url": "mysql://root:password@127.0.0.1/dsite",
   "disable_signups": false,
   "facebook_app_id": false,
   "google_analytics_id": false,
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' steemit.com https://api.steemit.com api.blocktrades.us",
+      "connectSrc": "'self' dsite.io https://d.dpays.io api.dpays.io",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com",
       "frameAncestors": "'none'",
@@ -20,7 +20,7 @@
     "reportOnly": false,
     "setAllHeaders": true
   },
-  "img_proxy_prefix": "https://steemitdevimages.com/",
+  "img_proxy_prefix": "https://dsiteimages.com/",
   "ipfs_prefix": false,
   "mixpanel": false,
   "newrelic": false,
@@ -33,13 +33,13 @@
     "site_key": false
   },
   "registrar": {
-    "account": "-",
-    "fee": "0.5 STEEM",
-    "delegation": "150250.000000 VESTS",
+    "account": "jared",
+    "fee": "0.5 BEX",
+    "delegation": "0.000000 VESTS",
     "signing_key": "5J..."
   },
   "requestAccountRecovery": {
-    "recovery_account": "steem",
+    "recovery_account": "dpay",
     "signing_key": "5J..."
   },
   "sendgrid": {
@@ -51,9 +51,9 @@
     }
   },
   "server_session_secret": "exiKdyF+IwRIXJDmtGIl4vWUz4i3eVSISpfZoeYc0s4=",
-  "session_cookie_key": "stm-dev",
-  "session_key": "steemses",
-  "site_domain": "steemitdev.com",
+  "session_cookie_key": "dwb-dev",
+  "session_key": "dsiteses",
+  "site_domain": "dsite.io",
   "tarantool": {
     "host": "localhost",
     "password": "",
@@ -69,11 +69,11 @@
     "auth_token": false
   },
   "upload_image": false,
-  "steemd_connection_client": "https://api.steemit.com",
-  "steemd_connection_server": "https://api.steemit.com",
-  "steemd_use_appbase": false,
-  "chain_id": "0000000000000000000000000000000000000000000000000000000000000000",
-  "address_prefix": "STM",
+  "dpayd_connection_client": "wss://d.dpays.io",
+  "dpayd_connection_server": "wss://d.dpays.io",
+  "dpayd_use_appbase": false,
+  "chain_id": "38f14b346eb697ba04ae0f5adcfaa0a437ed3711197704aa256a14cb9b4a8f26",
+  "address_prefix": "DWB",
   "conveyor_posting_wif": false,
   "conveyor_username": false
 }

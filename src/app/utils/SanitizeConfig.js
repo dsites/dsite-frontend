@@ -82,7 +82,7 @@ export default ({
         // title is only set in the case of an external link warning
         a: ['href', 'rel', 'title'],
     },
-    allowedSchemes: ['http', 'https', 'steem'],
+    allowedSchemes: ['http', 'https', 'dpay'],
     transformTags: {
         iframe: (tagName, attribs) => {
             const srcAtty = attribs.src;
@@ -174,8 +174,8 @@ export default ({
             if (!href) href = '#';
             href = href.trim();
             const attys = { href };
-            // If it's not a (relative or absolute) steemit URL...
-            if (!href.match(/^(\/(?!\/)|https:\/\/steemit.com)/)) {
+            // If it's not a (relative or absolute) dSite URL...
+            if (!href.match(/^(\/(?!\/)|https:\/\/dsite.io)/)) {
                 // attys.target = '_blank' // pending iframe impl https://mathiasbynens.github.io/rel-noopener/
                 attys.rel = highQualityPost ? 'noopener' : 'nofollow noopener';
                 attys.title = getExternalLinkWarningMessage();

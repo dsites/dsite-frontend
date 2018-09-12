@@ -8,10 +8,10 @@ import shouldComponentUpdate from 'app/utils/shouldComponentUpdate';
 import Icon from 'app/components/elements/Icon';
 import tt from 'counterpart';
 import { APP_NAME, APP_ICON } from 'app/client_config';
-import { key_utils } from '@steemit/steem-js/lib/auth/ecc';
+import { key_utils } from 'dpayjs/lib/auth/ecc';
 
 const { bool } = PropTypes;
-export const steemitCannotRecoverPasswords = tt(
+export const dsiteCannotRecoverPasswords = tt(
     'suggestpassword_jsx.APP_NAME_cannot_recover_passwords_keep_this_page_in_a_secure_location'
 );
 
@@ -49,7 +49,7 @@ class SuggestPassword extends React.Component {
                                   { APP_NAME }
                               )}
                     </h5>
-                    {steemitCannotRecoverPasswords}
+                    {dsiteCannotRecoverPasswords}
                 </div>
                 <br />
                 <div>

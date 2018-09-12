@@ -50,12 +50,12 @@ class Market extends React.Component {
     componentWillReceiveProps(np) {
         if (!this.props.ticker && np.ticker) {
             const { lowest_ask, highest_bid } = np.ticker;
-            if (this.refs.buySteem_price)
-                this.refs.buySteem_price.value = parseFloat(lowest_ask).toFixed(
+            if (this.refs.buyDPay_price)
+                this.refs.buyDPay_price.value = parseFloat(lowest_ask).toFixed(
                     6
                 );
-            if (this.refs.sellSteem_price)
-                this.refs.sellSteem_price.value = parseFloat(
+            if (this.refs.sellDPay_price)
+                this.refs.sellDPay_price.value = parseFloat(
                     highest_bid
                 ).toFixed(6);
         }
@@ -87,7 +87,7 @@ class Market extends React.Component {
         let tc =
             typeof this.props.ticker == 'undefined' ||
             this.props.ticker.latest !== nextProps.ticker.latest ||
-            this.props.ticker.sbd_volume !== nextProps.ticker.sbd_volume;
+            this.props.ticker.bbd_volume !== nextProps.ticker.bbd_volume;
 
         let bc =
             typeof this.props.orderbook == 'undefined' ||
@@ -107,15 +107,15 @@ class Market extends React.Component {
         return tc || bc || oc;
     };
 
-    buySteem = e => {
+    buyDPay = e => {
         e.preventDefault();
         const { placeOrder, user } = this.props;
         if (!user) return;
         const amount_to_sell = parseFloat(
-            ReactDOM.findDOMNode(this.refs.buySteem_total).value
+            ReactDOM.findDOMNode(this.refs.buyDPay_total).value
         );
         const min_to_receive = parseFloat(
-            ReactDOM.findDOMNode(this.refs.buySteem_amount).value
+            ReactDOM.findDOMNode(this.refs.buyDPay_amount).value
         );
         const price = (amount_to_sell / min_to_receive).toFixed(6);
         const { lowest_ask } = this.props.ticker;
@@ -132,15 +132,15 @@ class Market extends React.Component {
             }
         );
     };
-    sellSteem = e => {
+    sellDPay = e => {
         e.preventDefault();
         const { placeOrder, user } = this.props;
         if (!user) return;
         const min_to_receive = parseFloat(
-            ReactDOM.findDOMNode(this.refs.sellSteem_total).value
+            ReactDOM.findDOMNode(this.refs.sellDPay_total).value
         );
         const amount_to_sell = parseFloat(
-            ReactDOM.findDOMNode(this.refs.sellSteem_amount).value
+            ReactDOM.findDOMNode(this.refs.sellDPay_amount).value
         );
         const price = (min_to_receive / amount_to_sell).toFixed(6);
         const { highest_bid } = this.props.ticker;
@@ -170,19 +170,19 @@ class Market extends React.Component {
     setFormPrice = price => {
         const p = parseFloat(price);
 
-        this.refs.sellSteem_price.value = p.toFixed(6);
-        this.refs.buySteem_price.value = p.toFixed(6);
+        this.refs.sellDPay_price.value = p.toFixed(6);
+        this.refs.buyDPay_price.value = p.toFixed(6);
 
-        const samount = parseFloat(this.refs.sellSteem_amount.value);
+        const samount = parseFloat(this.refs.sellDPay_amount.value);
         if (samount >= 0)
-            this.refs.sellSteem_total.value = roundDown(p * samount, 3);
+            this.refs.sellDPay_total.value = roundDown(p * samount, 3);
 
-        const bamount = parseFloat(this.refs.buySteem_amount.value);
+        const bamount = parseFloat(this.refs.buyDPay_amount.value);
         if (bamount >= 0)
-            this.refs.buySteem_total.value = roundUp(p * bamount, 3);
+            this.refs.buyDPay_total.value = roundUp(p * bamount, 3);
 
-        this.validateBuySteem();
-        this.validateSellSteem();
+        this.validateBuyDPay();
+        this.validateSellDPay();
     };
 
     percentDiff = (marketPrice, userPrice) => {
@@ -190,10 +190,10 @@ class Market extends React.Component {
         return 100 * (userPrice - marketPrice) / marketPrice;
     };
 
-    validateBuySteem = () => {
-        const amount = parseFloat(this.refs.buySteem_amount.value);
-        const price = parseFloat(this.refs.buySteem_price.value);
-        const total = parseFloat(this.refs.buySteem_total.value);
+    validateBuyDPay = () => {
+        const amount = parseFloat(this.refs.buyDPay_amount.value);
+        const price = parseFloat(this.refs.buyDPay_price.value);
+        const total = parseFloat(this.refs.buyDPay_total.value);
         const valid = amount > 0 && price > 0 && total > 0;
         const { lowest_ask } = this.props.ticker;
         this.setState({
@@ -203,10 +203,10 @@ class Market extends React.Component {
         });
     };
 
-    validateSellSteem = () => {
-        const amount = parseFloat(this.refs.sellSteem_amount.value);
-        const price = parseFloat(this.refs.sellSteem_price.value);
-        const total = parseFloat(this.refs.sellSteem_total.value);
+    validateSellDPay = () => {
+        const amount = parseFloat(this.refs.sellDPay_amount.value);
+        const price = parseFloat(this.refs.sellDPay_price.value);
+        const total = parseFloat(this.refs.sellDPay_total.value);
         const valid = amount > 0 && price > 0 && total > 0;
         const { highest_bid } = this.props.ticker;
         this.setState({
@@ -222,12 +222,12 @@ class Market extends React.Component {
 
     render() {
         const {
-            sellSteem,
-            buySteem,
+            sellDPay,
+            buyDPay,
             cancelOrderClick,
             setFormPrice,
-            validateBuySteem,
-            validateSellSteem,
+            validateBuyDPay,
+            validateSellDPay,
             handleToggleOpenOrdersSort,
         } = this;
         const {
@@ -242,7 +242,7 @@ class Market extends React.Component {
             lowest_ask: 0,
             highest_bid: 0,
             percent_change: 0,
-            sbd_volume: 0,
+            bbd_volume: 0,
             feed_price: 0,
         };
 
@@ -252,7 +252,7 @@ class Market extends React.Component {
                 lowest_ask,
                 highest_bid,
                 percent_change,
-                sbd_volume,
+                bbd_volume,
             } = this.props.ticker;
             const base = this.props.feed.get('base');
             const quote = this.props.feed.get('quote');
@@ -261,7 +261,7 @@ class Market extends React.Component {
                 lowest_ask: roundUp(parseFloat(lowest_ask), 6),
                 highest_bid: roundDown(parseFloat(highest_bid), 6),
                 percent_change: parseFloat(percent_change),
-                sbd_volume: parseFloat(sbd_volume),
+                bbd_volume: parseFloat(bbd_volume),
                 feed_price:
                     parseFloat(base.split(' ')[0]) /
                     parseFloat(quote.split(' ')[0]),
@@ -293,10 +293,10 @@ class Market extends React.Component {
                     ) {
                         //if(last !== null && o.price == last.price) {
                         buff[buff.length - 1] = buff[buff.length - 1].add(o);
-                        // buff[buff.length-1].steem += o.steem
-                        // buff[buff.length-1].sbd   += o.sbd
-                        // buff[buff.length-1].sbd_depth = o.sbd_depth
-                        // buff[buff.length-1].steem_depth = o.steem_depth
+                        // buff[buff.length-1].dpay += o.dpay
+                        // buff[buff.length-1].bbd   += o.bbd
+                        // buff[buff.length-1].bbd_depth = o.bbd_depth
+                        // buff[buff.length-1].dpay_depth = o.dpay_depth
                     } else {
                         buff.push(o);
                     }
@@ -324,8 +324,8 @@ class Market extends React.Component {
                             {CURRENCY_SIGN}
                             {o.price.toFixed(6)}
                         </td>
-                        <td>{o.steem}</td>
-                        <td>{o.sbd.replace('SBD', DEBT_TOKEN_SHORT)}</td>
+                        <td>{o.dpay}</td>
+                        <td>{o.bbd.replace('BBD', DEBT_TOKEN_SHORT)}</td>
                         <td>
                             <a
                                 href="#"
@@ -400,10 +400,10 @@ class Market extends React.Component {
                             </th>
                             <th
                                 className={classNames(
-                                    activeClass('sbd'),
+                                    activeClass('bbd'),
                                     'sortable'
                                 )}
-                                onClick={e => handleToggleOpenOrdersSort('sbd')}
+                                onClick={e => handleToggleOpenOrdersSort('bbd')}
                             >
                                 {`${DEBT_TOKEN_SHORT} (${CURRENCY_SIGN})`}
                             </th>
@@ -453,7 +453,7 @@ class Market extends React.Component {
                             <li>
                                 <b>{tt('market_jsx.24h_volume')}</b>{' '}
                                 {CURRENCY_SIGN}
-                                {ticker.sbd_volume.toFixed(2)}
+                                {ticker.bbd_volume.toFixed(2)}
                             </li>
                             <li>
                                 <b>{tt('g.bid')}</b> {CURRENCY_SIGN}
@@ -501,7 +501,7 @@ class Market extends React.Component {
                                 LIQUID_TOKEN,
                             })}
                         </h4>
-                        <form className="Market__orderform" onSubmit={buySteem}>
+                        <form className="Market__orderform" onSubmit={buyDPay}>
                             <div className="row">
                                 <div className="column small-3 large-2">
                                     <label>{tt('g.price')}</label>
@@ -516,23 +516,23 @@ class Market extends React.Component {
                                                     : '')
                                             }
                                             type="text"
-                                            ref="buySteem_price"
+                                            ref="buyDPay_price"
                                             placeholder="0.0"
                                             onChange={e => {
                                                 const amount = parseFloat(
-                                                    this.refs.buySteem_amount
+                                                    this.refs.buyDPay_amount
                                                         .value
                                                 );
                                                 const price = parseFloat(
-                                                    this.refs.buySteem_price
+                                                    this.refs.buyDPay_price
                                                         .value
                                                 );
                                                 if (amount >= 0 && price >= 0)
-                                                    this.refs.buySteem_total.value = roundUp(
+                                                    this.refs.buyDPay_total.value = roundUp(
                                                         price * amount,
                                                         3
                                                     );
-                                                validateBuySteem();
+                                                validateBuyDPay();
                                             }}
                                         />
                                         <span className="input-group-label uppercase">{`${
@@ -551,23 +551,23 @@ class Market extends React.Component {
                                         <input
                                             className="input-group-field"
                                             type="text"
-                                            ref="buySteem_amount"
+                                            ref="buyDPay_amount"
                                             placeholder="0.0"
                                             onChange={e => {
                                                 const price = parseFloat(
-                                                    this.refs.buySteem_price
+                                                    this.refs.buyDPay_price
                                                         .value
                                                 );
                                                 const amount = parseFloat(
-                                                    this.refs.buySteem_amount
+                                                    this.refs.buyDPay_amount
                                                         .value
                                                 );
                                                 if (price >= 0 && amount >= 0)
-                                                    this.refs.buySteem_total.value = roundUp(
+                                                    this.refs.buyDPay_total.value = roundUp(
                                                         price * amount,
                                                         3
                                                     );
-                                                validateBuySteem();
+                                                validateBuyDPay();
                                             }}
                                         />
                                         <span className="input-group-label uppercase">
@@ -587,23 +587,23 @@ class Market extends React.Component {
                                         <input
                                             className="input-group-field"
                                             type="text"
-                                            ref="buySteem_total"
+                                            ref="buyDPay_total"
                                             placeholder="0.0"
                                             onChange={e => {
                                                 const price = parseFloat(
-                                                    this.refs.buySteem_price
+                                                    this.refs.buyDPay_price
                                                         .value
                                                 );
                                                 const total = parseFloat(
-                                                    this.refs.buySteem_total
+                                                    this.refs.buyDPay_total
                                                         .value
                                                 );
                                                 if (total >= 0 && price >= 0)
-                                                    this.refs.buySteem_amount.value = roundUp(
+                                                    this.refs.buyDPay_amount.value = roundUp(
                                                         total / price,
                                                         3
                                                     );
-                                                validateBuySteem();
+                                                validateBuyDPay();
                                             }}
                                         />
                                         <span className="input-group-label">{`${
@@ -634,27 +634,27 @@ class Market extends React.Component {
                                                         e.preventDefault();
                                                         const price = parseFloat(
                                                             this.refs
-                                                                .buySteem_price
+                                                                .buyDPay_price
                                                                 .value
                                                         );
-                                                        const total = account.sbd_balance.split(
+                                                        const total = account.bbd_balance.split(
                                                             ' '
                                                         )[0];
-                                                        this.refs.buySteem_total.value = total;
+                                                        this.refs.buyDPay_total.value = total;
                                                         if (price >= 0)
-                                                            this.refs.buySteem_amount.value = roundDown(
+                                                            this.refs.buyDPay_amount.value = roundDown(
                                                                 parseFloat(
                                                                     total
                                                                 ) / price,
                                                                 3
                                                             ).toFixed(3);
-                                                        validateBuySteem();
+                                                        validateBuyDPay();
                                                     }}
                                                 >
                                                     {tt('market_jsx.available')}:
                                                 </a>{' '}
-                                                {account.sbd_balance.replace(
-                                                    'SBD',
+                                                {account.bbd_balance.replace(
+                                                    'BBD',
                                                     DEBT_TOKEN_SHORT
                                                 )}
                                             </small>
@@ -669,20 +669,20 @@ class Market extends React.Component {
                                                     e.preventDefault();
                                                     const amount = parseFloat(
                                                         this.refs
-                                                            .buySteem_amount
+                                                            .buyDPay_amount
                                                             .value
                                                     );
                                                     const price = parseFloat(
                                                         ticker.lowest_ask
                                                     );
-                                                    this.refs.buySteem_price.value =
+                                                    this.refs.buyDPay_price.value =
                                                         ticker.lowest_ask;
                                                     if (amount >= 0)
-                                                        this.refs.buySteem_total.value = roundUp(
+                                                        this.refs.buyDPay_total.value = roundUp(
                                                             amount * price,
                                                             3
                                                         ).toFixed(3);
-                                                    validateBuySteem();
+                                                    validateBuyDPay();
                                                 }}
                                             >
                                                 {tt('market_jsx.lowest_ask')}:
@@ -704,7 +704,7 @@ class Market extends React.Component {
 
                         <form
                             className="Market__orderform"
-                            onSubmit={sellSteem}
+                            onSubmit={sellDPay}
                         >
                             <div className="row">
                                 <div className="column small-3 large-2">
@@ -720,23 +720,23 @@ class Market extends React.Component {
                                                     : '')
                                             }
                                             type="text"
-                                            ref="sellSteem_price"
+                                            ref="sellDPay_price"
                                             placeholder="0.0"
                                             onChange={e => {
                                                 const amount = parseFloat(
-                                                    this.refs.sellSteem_amount
+                                                    this.refs.sellDPay_amount
                                                         .value
                                                 );
                                                 const price = parseFloat(
-                                                    this.refs.sellSteem_price
+                                                    this.refs.sellDPay_price
                                                         .value
                                                 );
                                                 if (amount >= 0 && price >= 0)
-                                                    this.refs.sellSteem_total.value = roundDown(
+                                                    this.refs.sellDPay_total.value = roundDown(
                                                         price * amount,
                                                         3
                                                     );
-                                                validateSellSteem();
+                                                validateSellDPay();
                                             }}
                                         />
                                         <span className="input-group-label uppercase">{`${
@@ -755,23 +755,23 @@ class Market extends React.Component {
                                         <input
                                             className="input-group-field"
                                             type="text"
-                                            ref="sellSteem_amount"
+                                            ref="sellDPay_amount"
                                             placeholder="0.0"
                                             onChange={e => {
                                                 const price = parseFloat(
-                                                    this.refs.sellSteem_price
+                                                    this.refs.sellDPay_price
                                                         .value
                                                 );
                                                 const amount = parseFloat(
-                                                    this.refs.sellSteem_amount
+                                                    this.refs.sellDPay_amount
                                                         .value
                                                 );
                                                 if (price >= 0 && amount >= 0)
-                                                    this.refs.sellSteem_total.value = roundDown(
+                                                    this.refs.sellDPay_total.value = roundDown(
                                                         price * amount,
                                                         3
                                                     );
-                                                validateSellSteem();
+                                                validateSellDPay();
                                             }}
                                         />
                                         <span className="input-group-label uppercase">
@@ -790,23 +790,23 @@ class Market extends React.Component {
                                         <input
                                             className="input-group-field"
                                             type="text"
-                                            ref="sellSteem_total"
+                                            ref="sellDPay_total"
                                             placeholder="0.0"
                                             onChange={e => {
                                                 const price = parseFloat(
-                                                    this.refs.sellSteem_price
+                                                    this.refs.sellDPay_price
                                                         .value
                                                 );
                                                 const total = parseFloat(
-                                                    this.refs.sellSteem_total
+                                                    this.refs.sellDPay_total
                                                         .value
                                                 );
                                                 if (price >= 0 && total >= 0)
-                                                    this.refs.sellSteem_amount.value = roundUp(
+                                                    this.refs.sellDPay_amount.value = roundUp(
                                                         total / price,
                                                         3
                                                     );
-                                                validateSellSteem();
+                                                validateSellDPay();
                                             }}
                                         />
                                         <span className="input-group-label">{`${
@@ -837,22 +837,22 @@ class Market extends React.Component {
                                                         e.preventDefault();
                                                         const price = parseFloat(
                                                             this.refs
-                                                                .sellSteem_price
+                                                                .sellDPay_price
                                                                 .value
                                                         );
                                                         const amount = account.balance.split(
                                                             ' '
                                                         )[0];
-                                                        this.refs.sellSteem_amount.value = amount;
+                                                        this.refs.sellDPay_amount.value = amount;
                                                         if (price >= 0)
-                                                            this.refs.sellSteem_total.value = roundDown(
+                                                            this.refs.sellDPay_total.value = roundDown(
                                                                 price *
                                                                     parseFloat(
                                                                         amount
                                                                     ),
                                                                 3
                                                             );
-                                                        validateSellSteem();
+                                                        validateSellDPay();
                                                     }}
                                                 >
                                                     {tt('market_jsx.available')}:
@@ -872,19 +872,19 @@ class Market extends React.Component {
                                                     e.preventDefault();
                                                     const amount = parseFloat(
                                                         this.refs
-                                                            .sellSteem_amount
+                                                            .sellDPay_amount
                                                             .value
                                                     );
                                                     const price =
                                                         ticker.highest_bid;
-                                                    this.refs.sellSteem_price.value = price;
+                                                    this.refs.sellDPay_price.value = price;
                                                     if (amount >= 0)
-                                                        this.refs.sellSteem_total.value = roundDown(
+                                                        this.refs.sellDPay_total.value = roundDown(
                                                             parseFloat(price) *
                                                                 amount,
                                                             3
                                                         );
-                                                    validateSellSteem();
+                                                    validateSellDPay();
                                                 }}
                                             >
                                                 {tt('market_jsx.highest_bid')}:
@@ -1008,7 +1008,7 @@ module.exports = {
                 fill_or_kill = false,
                 expiration = DEFAULT_EXPIRE
             ) => {
-                // create_order jsc 12345 "1.000 SBD" "100.000 STEEM" true 1467122240 false
+                // create_order jsc 12345 "1.000 BBD" "100.000 BEX" true 1467122240 false
 
                 // Padd amounts to 3 decimal places
                 amount_to_sell = amount_to_sell.replace(

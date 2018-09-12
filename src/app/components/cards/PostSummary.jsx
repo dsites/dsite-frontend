@@ -69,13 +69,13 @@ class PostSummary extends React.Component {
 
         if (reblogged_by) {
             reblogged_by = (
-                <div className="articles__resteem">
-                    <p className="articles__resteem-text">
-                        <span className="articles__resteem-icon">
+                <div className="articles__repost">
+                    <p className="articles__repost-text">
+                        <span className="articles__repost-icon">
                             <Icon name="reblog" />
                         </span>
                         <UserNames names={reblogged_by} />{' '}
-                        {tt('postsummary_jsx.resteemed')}
+                        {tt('postsummary_jsx.reposted')}
                     </p>
                 </div>
             );
@@ -84,12 +84,12 @@ class PostSummary extends React.Component {
         // 'account' is the current blog being viewed, if applicable.
         if (account && account != content.get('author')) {
             reblogged_by = (
-                <div className="articles__resteem">
-                    <p className="articles__resteem-text">
-                        <span className="articles__resteem-icon">
+                <div className="articles__repost">
+                    <p className="articles__repost-text">
+                        <span className="articles__repost-icon">
                             <Icon name="reblog" />
                         </span>
-                        {tt('postsummary_jsx.resteemed')}
+                        {tt('postsummary_jsx.reposted')}
                     </p>
                 </div>
             );
@@ -102,7 +102,7 @@ class PostSummary extends React.Component {
         const desc = p.desc;
 
         const archived = content.get('cashout_time') === '1969-12-31T23:59:59'; // TODO: audit after HF17. #1259
-        const full_power = content.get('percent_steem_dollars') === 0;
+        const full_power = content.get('percent_dpay_dollars') === 0;
 
         let post_url;
         let title_text;
@@ -195,7 +195,7 @@ class PostSummary extends React.Component {
                                     className="articles__icon-100"
                                     title={tt('g.powered_up_100')}
                                 >
-                                    <Icon name="steempower" />
+                                    <Icon name="bexpower" />
                                 </span>
                             )}
                         </Link>

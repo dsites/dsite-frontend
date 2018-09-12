@@ -14,7 +14,7 @@ import MiniHeader from 'app/components/modules/MiniHeader';
 import tt from 'counterpart';
 import PageViewsCounter from 'app/components/elements/PageViewsCounter';
 import { serverApiRecordEvent } from 'app/utils/ServerApiClient';
-import { key_utils } from '@steemit/steem-js/lib/auth/ecc';
+import { key_utils } from 'dpayjs/lib/auth/ecc';
 import resolveRoute from 'app/ResolveRoute';
 import { VIEW_MODE_WHISTLE } from 'shared/constants';
 
@@ -177,7 +177,7 @@ class App extends React.Component {
                             />
                             <ul>
                                 <li>
-                                    /*<a href="https://steemit.com/steemit/@steemitblog/steemit-com-is-now-open-source">
+                                    /*<a href="https://dsite.io/dsite/@dsiteblog/dsite-io-is-now-open-source">
                                         ...STORY TEXT...
                                     </a>*/
                                 </li>

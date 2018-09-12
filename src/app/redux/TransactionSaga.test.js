@@ -1,7 +1,7 @@
 /* global describe, it, before, beforeEach, after, afterEach */
 
 import { call, select, all, takeEvery } from 'redux-saga/effects';
-import steem, { api, broadcast } from '@steemit/steem-js';
+import dpay, { api, broadcast } from 'dpayjs';
 import { cloneableGenerator } from 'redux-saga/utils';
 import * as transactionActions from 'app/redux/TransactionReducer';
 import {
@@ -30,7 +30,7 @@ const operation = {
     category: 'hi',
     json_metadata: {
         tags: ['hi'],
-        app: 'steemit/0.1',
+        app: 'dsite/0.1',
         format: 'markdown',
     },
     parent_author: 'candide',
