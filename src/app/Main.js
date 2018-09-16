@@ -85,7 +85,7 @@ function runApp(initial_state) {
     });
     dpay.config.set('address_prefix', config.address_prefix);
     dpay.config.set('chain_id', config.chain_id);
-    window.$DWB_Config = config;
+    window.$STM_Config = config;
     plugins(config);
     if (initial_state.offchain.serverBusy) {
         window.$DWB_ServerBusy = true;

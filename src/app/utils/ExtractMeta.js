@@ -17,7 +17,7 @@ function addSiteMeta(metas) {
         property: 'og:image',
         content: 'https://dsite.io/images/dsite.png',
     });
-    metas.push({ property: 'fb:app_id', content: $DWB_Config.fb_app });
+    metas.push({ property: 'fb:app_id', content: $STM_Config.fb_app });
     metas.push({ name: 'twitter:card', content: 'summary' });
     metas.push({ name: 'twitter:site', content: '@dsiteio' });
     metas.push({ name: 'twitter:title', content: '#dSite' });
@@ -61,7 +61,7 @@ export default function extractMeta(chain_data, rp) {
             });
             metas.push({ name: 'og:description', content: desc });
             metas.push({ name: 'og:site_name', content: 'dSite' });
-            metas.push({ name: 'fb:app_id', content: $DWB_Config.fb_app });
+            metas.push({ name: 'fb:app_id', content: $STM_Config.fb_app });
             metas.push({ name: 'article:tag', content: category });
             metas.push({
                 name: 'article:published_time',

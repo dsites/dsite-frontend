@@ -11,7 +11,7 @@ import { cleanReduxInput } from 'app/utils/ReduxForms';
 import tt from 'counterpart';
 import { DEBT_TOKEN, DEBT_TICKER, LIQUID_TOKEN } from 'app/client_config';
 
-class ConvertToBex extends React.Component {
+class ConvertToDPay extends React.Component {
     constructor() {
         super();
         this.state = {};
@@ -19,7 +19,7 @@ class ConvertToBex extends React.Component {
     componentDidMount() {
         ReactDOM.findDOMNode(this.refs.amt).focus();
     }
-    shouldComponentUpdate = shouldComponentUpdate(this, 'ConvertToBex');
+    shouldComponentUpdate = shouldComponentUpdate(this, 'ConvertToDPay');
     dispatchSubmit = () => {
         const { convert, owner, onClose } = this.props;
         const { amount } = this.props.fields;
@@ -122,7 +122,7 @@ class ConvertToBex extends React.Component {
 }
 
 export default reduxForm(
-    { form: 'convertToBex', fields: ['amount'] },
+    { form: 'convertToDPay', fields: ['amount'] },
     // mapStateToProps
     (state, ownProps) => {
         const current = state.user.get('current');
@@ -176,4 +176,4 @@ export default reduxForm(
             );
         },
     })
-)(ConvertToBex);
+)(ConvertToDPay);

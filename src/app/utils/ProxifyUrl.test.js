@@ -4,7 +4,7 @@ import proxifyImageUrl from './ProxifyUrl';
 
 describe('ProxifyUrl', () => {
     beforeAll(() => {
-        global.$DWB_Config = { img_proxy_prefix: 'https://dsiteimages.com/' };
+        global.$STM_Config = { img_proxy_prefix: 'https://dsiteimages.com/' };
     });
     it('naked URL', () => {
         testCase(
